@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 import 'package:adventurous_learner_app/utils/common.dart';
@@ -86,10 +88,15 @@ class ApiUtils {
   }
 
   bool validateData(dynamic response) {
-    if (response == null || !(response.success ?? false)) {
-      showSnackbar(response?.errorMessage ?? 'Oops! something went wrong');
+    // if (response == null || !(response.success ?? false)) {
+    if (response == null) {
       return false;
     }
     return true;
+  }
+
+  addBodyToRequest(http.Request request, Map<String, dynamic> body) {
+    request.body = json.encode(body);
+    printLog(request.body);
   }
 }

@@ -1,9 +1,11 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+
+import 'package:adventurous_learner_app/utils/const_color.dart';
 
 printLog(dynamic value, {bool isError = false}) {
   if (kDebugMode) {
@@ -11,24 +13,30 @@ printLog(dynamic value, {bool isError = false}) {
   }
 }
 
-Future<bool?> toast(String message) async {
-  return Fluttertoast.showToast(
-    msg: message,
-    toastLength: Toast.LENGTH_SHORT,
-    gravity: ToastGravity.BOTTOM,
-    timeInSecForIosWeb: 1,
-    backgroundColor: Colors.black54,
-    textColor: Colors.white,
-    fontSize: 15.0,
-  );
-}
-
-showSnackbar(String message, [int timeInSec = 3]) {
+showSnackBar(String message, {isError = false}) {
   Get.showSnackbar(
     GetSnackBar(
-      message: message,
-      duration: Duration(seconds: timeInSec),
+      messageText: Row(
+        children: [
+          if (isError) ...[
+            const Icon(Icons.error_outline, color: Colors.white, size: 18),
+            const SizedBox(width: 6)
+          ],
+          Text(
+            message,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: isError ? Colors.white : Colors.black,
+            ),
+          ),
+        ],
+      ),
+      duration: const Duration(seconds: 3),
       snackStyle: SnackStyle.FLOATING,
+      snackPosition: SnackPosition.TOP,
+      backgroundColor: isError ? Colors.red : greenColor1,
     ),
   );
 }
+
+hideKeyBoard() => SystemChannels.textInput.invokeMethod('TextInput.hide');

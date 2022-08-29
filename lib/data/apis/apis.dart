@@ -4,7 +4,6 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:adventurous_learner_app/utils/constants.dart';
 import 'package:adventurous_learner_app/utils/common.dart';
 import 'package:adventurous_learner_app/data/apis/constant.dart';
 import 'package:adventurous_learner_app/data/apis/utils.dart';
@@ -15,7 +14,6 @@ import 'package:adventurous_learner_app/data/modals/auth/register_user_response.
 import 'package:adventurous_learner_app/data/modals/map/location_detail_response.dart';
 import 'package:adventurous_learner_app/data/modals/auth/forgot_password_response.dart';
 import 'package:adventurous_learner_app/data/modals/auth/check_email_register_response.dart';
-import 'package:adventurous_learner_app/data/modals/map/place_detail_from_lat_long_response.dart';
 
 class Apis {
   final constant = ApiConstants();
@@ -268,76 +266,6 @@ class Apis {
     } catch (e) {
       showSnackBar('Check you internet', isError: true);
       return false;
-    }
-  }
-
-  Future<LocationDetailResponse?> updateReviewRatingAndText(
-    int rating,
-    String text,
-    String reviewId,
-    String locationId,
-    String token,
-  ) async {
-    final request =
-        utils.createPostRequest(constant.updateReviewRatingAndTextUrl);
-
-    request.headers.clear();
-
-    request.headers.addAll({
-      'Content-Type': 'application/json',
-      'x-access-token': token,
-    });
-
-    Map<String, dynamic> body = {
-      constant.paramRating: rating,
-      constant.paramText: text,
-      constant.paramReviewId: reviewId,
-      constant.paramLocationId: locationId,
-    };
-
-    utils.addBodyToRequest(request, body);
-    http.StreamedResponse response = await request.send();
-
-    try {
-      final data = await response.stream.bytesToString();
-      printLog(data);
-      return showSnackBar(
-        BaseResponse.fromJson(jsonDecode(data)).description ?? '',
-        isError: true,
-      );
-    } catch (e) {
-      printLog(e);
-      return null;
-    }
-  }
-
-  Future<PlaceDetailFromLatLongResponse?> getPlaceDetailFromLatLong(
-    double lat,
-    double lng,
-  ) async {
-    Map<String, String?> params = {
-      constant.paramKey: googleKey,
-      constant.paramLatLong: '$lat,$lng',
-    };
-
-    final request = utils.createGetRequestWithParams(
-      constant.getPlaceDetailFromLatLongUrl,
-      params,
-    );
-    http.StreamedResponse response = await request.send();
-
-    try {
-      if (response.statusCode == 200) {
-        final data = await response.stream.bytesToString();
-        printLog(data);
-        return PlaceDetailFromLatLongResponse.fromJson(jsonDecode(data));
-      } else {
-        printLog(response.reasonPhrase);
-        return null;
-      }
-    } catch (e) {
-      printLog(e);
-      return null;
     }
   }
 

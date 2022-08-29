@@ -1,14 +1,6 @@
-import 'dart:convert';
-
 /// html_attributions : []
 /// result : {"formatted_address":"Gwalior, Madhya Pradesh, India","geometry":{"location":{"lat":26.2124007,"lng":78.1772053}},"name":"Gwalior"}
 /// status : "OK"
-
-PlaceDetailResponse placeDetailResponseFromJson(String str) =>
-    PlaceDetailResponse.fromJson(json.decode(str));
-
-String placeDetailResponseToJson(PlaceDetailResponse data) =>
-    json.encode(data.toJson());
 
 class PlaceDetailResponse {
   PlaceDetailResponse({

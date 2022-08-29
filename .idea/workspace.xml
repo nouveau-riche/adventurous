@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f68a654-654a-4f49-871e-0cebcd5fd001" name="Changes" comment="UPDATES:&#10;&#10;* Milestone 1 completed" />
+    <list default="true" id="6f68a654-654a-4f49-871e-0cebcd5fd001" name="Changes" comment="UPDATES:&#10;&#10;* Milestone 2 completed">
+      <change beforePath="$PROJECT_DIR$/lib/data/apis/apis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/apis/apis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/controllers/map/map_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/controllers/map/map_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/controllers/review/review_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/controllers/review/review_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/google_map/google_map_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/google_map/google_map_utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/modals/map/place_detail_from_lat_long_response.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/modals/map/place_detail_response.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/modals/map/place_detail_response.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,6 +122,7 @@
     <MESSAGE value="UPDATES:&#10;&#10;* Initial commit" />
     <MESSAGE value="UPDATES:&#10;&#10;* System commit" />
     <MESSAGE value="UPDATES:&#10;&#10;* Milestone 1 completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="UPDATES:&#10;&#10;* Milestone 1 completed" />
+    <MESSAGE value="UPDATES:&#10;&#10;* Milestone 2 completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="UPDATES:&#10;&#10;* Milestone 2 completed" />
   </component>
 </project>

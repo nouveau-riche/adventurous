@@ -66,23 +66,6 @@ class ReviewController extends GetxController {
     }
   }
 
-  updateReview() async {
-    if (validateReview()) return;
-
-    _startLoading();
-
-    final token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
-
-    await constCtr.apis.updateReviewRatingAndText(
-      rating.toInt(),
-      reviewTextCtr.text,
-      'nt29vswuAziMsBBJ7M87iH',
-      'koDVu8GQy4K6JYveY6EziZ',
-      token,
-    );
-
-    stopLoading();
-  }
 
   removeImage(int index) {
     selectedImages.removeAt(index);

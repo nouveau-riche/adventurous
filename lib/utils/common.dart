@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:adventurous_learner_app/utils/const_color.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 printLog(dynamic value, {bool isError = false}) {
   if (kDebugMode) {
@@ -14,6 +15,7 @@ printLog(dynamic value, {bool isError = false}) {
 }
 
 showSnackBar(String message, {isError = false}) {
+  Get.closeAllSnackbars();
   Get.showSnackbar(
     GetSnackBar(
       messageText: Row(
@@ -38,5 +40,9 @@ showSnackBar(String message, {isError = false}) {
     ),
   );
 }
+
+void openURL(String url) async => await canLaunchUrl(Uri.parse(url))
+    ? await launchUrl(Uri.parse(url))
+    : showSnackBar("Oops! Something went wrong", isError: true);
 
 hideKeyBoard() => SystemChannels.textInput.invokeMethod('TextInput.hide');

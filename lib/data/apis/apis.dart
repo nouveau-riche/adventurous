@@ -1,15 +1,21 @@
+import 'dart:io';
 import 'dart:convert';
 
+import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
 
+import 'package:adventurous_learner_app/utils/constants.dart';
 import 'package:adventurous_learner_app/utils/common.dart';
 import 'package:adventurous_learner_app/data/apis/constant.dart';
 import 'package:adventurous_learner_app/data/apis/utils.dart';
 import 'package:adventurous_learner_app/data/modals/base_response.dart';
+import 'package:adventurous_learner_app/data/modals/home/home_content_response.dart';
 import 'package:adventurous_learner_app/data/modals/auth/login_user_response.dart';
 import 'package:adventurous_learner_app/data/modals/auth/register_user_response.dart';
+import 'package:adventurous_learner_app/data/modals/map/location_detail_response.dart';
 import 'package:adventurous_learner_app/data/modals/auth/forgot_password_response.dart';
 import 'package:adventurous_learner_app/data/modals/auth/check_email_register_response.dart';
+import 'package:adventurous_learner_app/data/modals/map/place_detail_from_lat_long_response.dart';
 
 class Apis {
   final constant = ApiConstants();
@@ -168,6 +174,200 @@ class Apis {
         final data = await response.stream.bytesToString();
         showSnackBar(
           BaseResponse.fromJson(jsonDecode(data)).description ?? '',
+          isError: true,
+        );
+        return null;
+      }
+    } catch (e) {
+      printLog(e);
+      return null;
+    }
+  }
+
+  Future<LocationDetailResponse?> getLocationDetails(
+    double lat,
+    double long,
+    String token,
+  ) async {
+    final request = utils.createPostRequest(constant.getLocationDetailUrl);
+
+    request.headers.clear();
+
+    request.headers.addAll({
+      'Content-Type': 'application/json',
+      'x-access-token': token,
+    });
+
+    Map<String, dynamic> body = {
+      constant.paramLat: lat,
+      constant.paramLong: long,
+      constant.paramRadius: 60,
+    };
+
+    utils.addBodyToRequest(request, body);
+    http.StreamedResponse response = await request.send();
+
+    try {
+      if (response.statusCode == 200) {
+        final data = await response.stream.bytesToString();
+        printLog(data);
+        return LocationDetailResponse.fromJson(jsonDecode(data));
+      } else {
+        printLog(response.reasonPhrase);
+        final data = await response.stream.bytesToString();
+        showSnackBar(
+          BaseResponse.fromJson(jsonDecode(data)).message ?? '',
+          isError: true,
+        );
+        return null;
+      }
+    } catch (e) {
+      printLog(e);
+      return null;
+    }
+  }
+
+  Future<bool> addRating(
+    int rating,
+    String review,
+    String locationId,
+    String token,
+    List<File> images,
+  ) async {
+    FormData body = FormData.fromMap({
+      constant.paramText: review,
+      constant.paramRating: rating.toString(),
+      constant.paramLocationId: locationId,
+    });
+
+    for (var file in images) {
+      body.files.addAll([
+        MapEntry(
+          constant.paramImages,
+          await MultipartFile.fromFile(
+            file.path,
+            filename: file.path.split('/').last,
+          ),
+        ),
+      ]);
+    }
+
+    try {
+      final request = await Dio().post(
+        constant.postReviewUrl,
+        data: body,
+        options: Options(headers: {"x-access-token": token}),
+      );
+
+      if (request.statusCode == 201) {
+        return true;
+      } else {
+        showSnackBar('Something went wrong', isError: true);
+        return false;
+      }
+    } catch (e) {
+      showSnackBar('Check you internet', isError: true);
+      return false;
+    }
+  }
+
+  Future<LocationDetailResponse?> updateReviewRatingAndText(
+    int rating,
+    String text,
+    String reviewId,
+    String locationId,
+    String token,
+  ) async {
+    final request =
+        utils.createPostRequest(constant.updateReviewRatingAndTextUrl);
+
+    request.headers.clear();
+
+    request.headers.addAll({
+      'Content-Type': 'application/json',
+      'x-access-token': token,
+    });
+
+    Map<String, dynamic> body = {
+      constant.paramRating: rating,
+      constant.paramText: text,
+      constant.paramReviewId: reviewId,
+      constant.paramLocationId: locationId,
+    };
+
+    utils.addBodyToRequest(request, body);
+    http.StreamedResponse response = await request.send();
+
+    try {
+      final data = await response.stream.bytesToString();
+      printLog(data);
+      return showSnackBar(
+        BaseResponse.fromJson(jsonDecode(data)).description ?? '',
+        isError: true,
+      );
+    } catch (e) {
+      printLog(e);
+      return null;
+    }
+  }
+
+  Future<PlaceDetailFromLatLongResponse?> getPlaceDetailFromLatLong(
+    double lat,
+    double lng,
+  ) async {
+    Map<String, String?> params = {
+      constant.paramKey: googleKey,
+      constant.paramLatLong: '$lat,$lng',
+    };
+
+    final request = utils.createGetRequestWithParams(
+      constant.getPlaceDetailFromLatLongUrl,
+      params,
+    );
+    http.StreamedResponse response = await request.send();
+
+    try {
+      if (response.statusCode == 200) {
+        final data = await response.stream.bytesToString();
+        printLog(data);
+        return PlaceDetailFromLatLongResponse.fromJson(jsonDecode(data));
+      } else {
+        printLog(response.reasonPhrase);
+        return null;
+      }
+    } catch (e) {
+      printLog(e);
+      return null;
+    }
+  }
+
+  Future<HomeContentResponse?> getHomeScreenContent(String token) async {
+    final request = utils.createPostRequest(constant.getHomeScreenContentUrl);
+
+    request.headers.clear();
+
+    request.headers.addAll({
+      'Content-Type': 'application/json',
+      'x-access-token': token,
+    });
+
+    Map<String, dynamic> body = {
+      constant.paramType: constant.tagHomeScreenContent,
+    };
+
+    utils.addBodyToRequest(request, body);
+    http.StreamedResponse response = await request.send();
+
+    try {
+      if (response.statusCode == 200) {
+        final data = await response.stream.bytesToString();
+        printLog(data);
+        return HomeContentResponse.fromJson(jsonDecode(data));
+      } else {
+        printLog(response.reasonPhrase);
+        final data = await response.stream.bytesToString();
+        showSnackBar(
+          BaseResponse.fromJson(jsonDecode(data)).message ?? '',
           isError: true,
         );
         return null;

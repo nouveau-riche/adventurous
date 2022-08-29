@@ -9,6 +9,7 @@ class RoundedElevatedButtonWidget extends StatelessWidget {
   final Function onPressed;
   final double radius;
   final double elevation;
+  final Color? color;
 
   const RoundedElevatedButtonWidget({
     Key? key,
@@ -18,6 +19,7 @@ class RoundedElevatedButtonWidget extends StatelessWidget {
     required this.onPressed,
     this.radius = 0,
     this.elevation = 1,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -26,18 +28,23 @@ class RoundedElevatedButtonWidget extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.black26,
-            offset: Offset(0, 4),
-            blurRadius: 5,
-          )
-        ],
-        gradient: const LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [greenColor1, greenColor2],
-        ),
+        boxShadow: elevation == 0
+            ? null
+            : const [
+                BoxShadow(
+                  color: Colors.black26,
+                  offset: Offset(0, 1),
+                  blurRadius: 1,
+                )
+              ],
+        color: color,
+        gradient: color == null
+            ? const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [greenColor1, greenColor2],
+              )
+            : null,
         borderRadius: BorderRadius.circular(radius),
       ),
       child: ElevatedButton(

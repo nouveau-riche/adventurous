@@ -45,7 +45,17 @@ dependencies:
   # Fonts
   google_fonts: 3.0.1
 
-  flutter_native_splash:
+  # Rating bar
+  flutter_rating_bar: 4.0.1
+
+  # form data requests
+  dio: ^4.0.6
+
+  # google maps
+  google_maps_flutter: ^2.1.9
+
+  # read more
+  readmore: ^2.1.0
 
 
 dev_dependencies:

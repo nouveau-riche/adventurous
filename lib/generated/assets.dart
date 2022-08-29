@@ -2,13 +2,32 @@
 class Assets {
   Assets._();
 
+  static const String iconsAbout = 'assets/icons/about.webp';
+  static const String iconsAddPlace = 'assets/icons/add_place.webp';
+  static const String iconsAddPlaceFilled = 'assets/icons/add_place_filled.webp';
+  static const String iconsContact = 'assets/icons/contact.webp';
+  static const String iconsHome = 'assets/icons/home.webp';
+  static const String iconsHomeFilled = 'assets/icons/home_filled.webp';
+  static const String iconsLearning = 'assets/icons/learning.webp';
+  static const String iconsLogout = 'assets/icons/logout.webp';
+  static const String iconsMap = 'assets/icons/map.webp';
+  static const String iconsMapFilled = 'assets/icons/map_filled.webp';
   static const String iconsName = 'assets/icons/name.webp';
+  static const String iconsNotification = 'assets/icons/notification.webp';
   static const String iconsPassword = 'assets/icons/password.webp';
+  static const String iconsPrivacy = 'assets/icons/privacy.webp';
+  static const String iconsProfile = 'assets/icons/profile.webp';
+  static const String iconsProfileFilled = 'assets/icons/profile_filled.webp';
+  static const String iconsReview = 'assets/icons/review.webp';
+  static const String iconsSearch = 'assets/icons/search.webp';
+  static const String iconsShare = 'assets/icons/share.webp';
   static const String imagesEnterOtp = 'assets/images/enter_otp.webp';
   static const String imagesForgotPassword = 'assets/images/forgot_password.webp';
   static const String imagesLogin = 'assets/images/login.webp';
-  static const String imagesLogo = 'assets/logo/splash.png';
+  static const String imagesLogo = 'assets/images/logo.webp';
+  static const String imagesPlaceholder = 'assets/images/placeholder.webp';
   static const String imagesRegister = 'assets/images/register.webp';
+  static const String logoAppIcon = 'assets/logo/app_icon.png';
   static const String logoSplash = 'assets/logo/splash.png';
 
 }

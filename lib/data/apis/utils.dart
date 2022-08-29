@@ -87,14 +87,6 @@ class ApiUtils {
     return request;
   }
 
-  bool validateData(dynamic response) {
-    // if (response == null || !(response.success ?? false)) {
-    if (response == null) {
-      return false;
-    }
-    return true;
-  }
-
   addBodyToRequest(http.Request request, Map<String, dynamic> body) {
     request.body = json.encode(body);
     printLog(request.body);

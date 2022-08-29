@@ -1,4 +1,5 @@
 class ConstString {
+  final appName = 'The Adventurous Learner';
   final title = 'The Adventurous Learner App';
   final strOops = 'Oops! something went wrong';
   final seeYouAgain = 'Hi there, nice to see you again';
@@ -12,7 +13,7 @@ class ConstString {
   final or = 'OR';
   final fillProfileDetails = 'To create profile, Please fill these information';
   final enterName = 'Enter name';
-  final enterEmail = 'Enter your email';
+  final enterEmail = 'Enter email';
   final enterPassword = 'Enter password';
   final alreadyHaveAccount = 'Already have a profile?';
   final next = 'Next';
@@ -23,4 +24,15 @@ class ConstString {
   final confirmNewPassword = 'Confirm New Password';
   final newPassword = 'New Password';
   final resetPassword = 'Reset Password';
+  final addReview = 'Add Review';
+  final review = 'Review';
+  final rating = 'Rating';
+  final addPhotos = 'Add Photos';
+  final direction = 'Direction';
+  final contact = 'Contact';
+  final website = 'Website';
+  final allowLocation =
+      'Please allow location permission from app setting to fetch your location.';
+
+  final learningOpportunity = 'Learning Opportunity';
 }

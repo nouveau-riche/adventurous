@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
+import 'package:adventurous_learner_app/utils/constants.dart';
+import 'package:adventurous_learner_app/utils/const_color.dart';
 import 'package:adventurous_learner_app/generated/assets.dart';
 
 Widget getImageBuilder(
   String? url,
-  String token,
   BorderRadius radius, {
   BoxFit? fit,
   Widget? placeHolder,
@@ -16,11 +17,11 @@ Widget getImageBuilder(
   if (url == null || url.isEmpty) return placeHolderToShow;
 
   return CachedNetworkImage(
-    imageUrl: url,
+    imageUrl: 'https://adventurelearner.herokuapp.com/api/v1/app/read-file$url',
     height: height,
     width: width,
     httpHeaders: {
-      'x-access-token': token,
+      'x-access-token': constCtr.token,
     },
     imageBuilder: (_, imageProvider) => Container(
       decoration: BoxDecoration(
@@ -52,6 +53,17 @@ Widget placeHolderImage(
         ),
         fit: BoxFit.cover,
       ),
+    ),
+  );
+}
+
+Widget circularProfileImage(String url, double radius) {
+  return CircleAvatar(
+    backgroundColor: greyColor5,
+    radius: radius,
+    backgroundImage: NetworkImage(
+      'https://adventurelearner.herokuapp.com/api/v1/app/read-file$url',
+      headers: {'x-access-token': constCtr.token},
     ),
   );
 }

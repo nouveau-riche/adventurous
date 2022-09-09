@@ -12,8 +12,15 @@ import 'package:adventurous_learner_app/data/controllers/auth/reset_password_con
 
 class OtpScreen extends StatelessWidget {
   final bool isResetPassword;
+  final bool isResetEmail;
+  final bool isResettingFromInside;
 
-  const OtpScreen({Key? key, this.isResetPassword = false}) : super(key: key);
+  const OtpScreen({
+    Key? key,
+    this.isResetPassword = false,
+    this.isResetEmail = false,
+    this.isResettingFromInside = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -144,7 +151,11 @@ class OtpScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  ctr.verifyPin(isResetPassword: isResetPassword);
+                  ctr.verifyPin(
+                    isResetPassword: isResetPassword,
+                    isResetEmail: isResetEmail,
+                    isResettingFromInside: isResettingFromInside,
+                  );
                 },
                 radius: 10,
               );

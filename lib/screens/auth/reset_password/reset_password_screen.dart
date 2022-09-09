@@ -11,7 +11,12 @@ import 'package:adventurous_learner_app/screens/auth/reset_password/widget/new_p
 import 'package:adventurous_learner_app/screens/auth/reset_password/widget/confirm_password_field_widget.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
-  const ResetPasswordScreen({Key? key}) : super(key: key);
+  final bool isResettingFromInside;
+
+  const ResetPasswordScreen({
+    Key? key,
+    this.isResettingFromInside = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +84,9 @@ class ResetPasswordScreen extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              onPressed: () => ctr.resetPassword,
+              onPressed: () => ctr.resetPassword(
+                isResettingFromInside: isResettingFromInside,
+              ),
               radius: 10,
             );
           },

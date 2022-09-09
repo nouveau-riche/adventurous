@@ -32,10 +32,33 @@ class ApiConstants {
 
   String get getHomeScreenContentUrl => '${baseUrl}content/get';
 
+  String get getUserProfileUrl => '${baseUrl}app/get-user-profile';
+
+  String get addPlaceUrl => '${baseUrl}suggest-location/create';
+
+  String get updateProfileUrl => '${baseUrl}app/update-profile';
+
+  String get emailExistsUrl => '${baseUrl}app/email-exist';
+
+  String get updateEmailUrl => '${baseUrl}app/change-email';
+
+  String get getUserLocationUrl => '${baseUrl}visited-location/list';
+
+  String get addUserLocationForEveryoneUrl => '${baseUrl}user-location/create';
+
+  String get addVisitedLocationUrl => '${baseUrl}visited-location/add';
+
+  String get searchLocationUrl => '${baseUrl}location/search';
+
+  String get updateProfileImageUrl => '${baseUrl}app/update-profile-image';
+
   final tagHomeScreenContent = 'HOME';
 
   final paramUserEmail = 'user_email';
   final paramName = 'name';
+  final paramNewEmail = 'new_email';
+  final paramBio = 'bio';
+  final paramOtp = 'otp';
   final paramPassword = 'password';
   final paramNewPassword = 'newPassword';
   final paramLat = 'lat';
@@ -48,5 +71,18 @@ class ApiConstants {
   final paramKey = 'key';
   final paramLatLong = 'latlng';
   final paramImages = 'images';
+  final paramPhoto = 'photo';
   final paramType = 'type';
+  final paramSkip = 'skip';
+  final paramLimit = 'limit';
+  final paramAddress = 'address';
+  final paramContactNo = 'contactNo';
+  final paramCountryCode = 'countryCode';
+  final paramWebsite = 'websiteLink';
+  final paramDescription = 'description';
+  final paramLearningOpportunity = 'learningOpportunity';
+  final paramLocation = "location";
+  final paramSearch = "search";
+  final paramContactName = "contactName";
+  final paramContactEmail = "contactEmail";
 }

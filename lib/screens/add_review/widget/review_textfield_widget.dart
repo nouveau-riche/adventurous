@@ -22,8 +22,11 @@ class ReviewTextFieldWidget extends StatelessWidget {
           color: kHintTextColor,
           fontWeight: FontWeight.w500,
         ),
+        enabledBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: greyColor5, width: 1.4),
+        ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: greenColor2),
+          borderSide: BorderSide(color: greenColor2, width: 1.4),
         ),
         icon: Image.asset(
           Assets.iconsReview,

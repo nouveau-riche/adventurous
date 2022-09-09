@@ -4,13 +4,113 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f68a654-654a-4f49-871e-0cebcd5fd001" name="Changes" comment="UPDATES:&#10;&#10;* Milestone 2 completed">
+    <list default="true" id="6f68a654-654a-4f49-871e-0cebcd5fd001" name="Changes" comment="UPDATES:&#10;&#10;* Removed unused code">
+      <change afterPath="$PROJECT_DIR$/assets/icons/address.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/bio.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/edit.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/location_name.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/phone.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/visited_location.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/controllers/add_location_for_yourself/add_location_for_yourself_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/controllers/add_place/add_place_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/controllers/add_visited_location/add_location_for_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/controllers/add_visited_location/add_visited_location_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/controllers/edit_profile/edit_name_and_bio_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/controllers/edit_profile/reset_email_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/controllers/profile/profile_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/controllers/profile/user_visited_location_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/modals/add_visited_location/search_location_response.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/modals/profile/user_detail_response.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/modals/profile/visited_location_response.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_location_for_yourself/add_location_for_yourself_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_location_for_yourself/widget/yourself_address_field_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_location_for_yourself/widget/yourself_bio_field_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_location_for_yourself/widget/yourself_learning_field_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_location_for_yourself/widget/yourself_location_name_field_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_location_for_yourself/widget/yourself_phone_field_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_location_for_yourself/widget/yourself_review_field_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_location_for_yourself/widget/yourself_submit_location_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_location_for_yourself/widget/yourself_website_field_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_place/widget/add_location_form_parent_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_place/widget/address_textfield_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_place/widget/contact_email_textfield_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_place/widget/learning_opp_textfield_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_place/widget/location_name_textfield_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_place/widget/name_textfeild_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_place/widget/phone_number_textfield_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_place/widget/submit_add_place_bt_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_place/widget/submit_add_place_dialog_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_place/widget/website_textfield_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_review/widget/star_and_image_review_parent_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_visited_location/add_visited_location_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_visited_location/widget/add_for_dialog_box.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_visited_location/widget/didnt_find_location_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_visited_location/widget/location_suggestion_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_visited_location/widget/save_vistited_location_bt_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_visited_location/widget/select_location_name_field_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/add_visited_location/widget/visited_location_address_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/edit_profile/edit_profile_bottom_sheet.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/edit_profile/name_and_bio/name_and_bio_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/edit_profile/name_and_bio/widget/edit_bio_textfield_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/edit_profile/name_and_bio/widget/edit_location_textfield_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/edit_profile/name_and_bio/widget/edit_name_textfield_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/edit_profile/reset_mail/reset_mail_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/edit_profile/reset_mail/widget/reset_mail_textfield_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/profile/all_user_location_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/profile/widget/add_new_visited_location_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/profile/widget/edit_profile_bt_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/profile/widget/person_detail_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/profile/widget/place_detail_vertical_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/profile/widget/visited_location_parent_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/profile/widget/your_total_location_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/widgets/shimmer/user_detail_shimmer_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/widgets/shimmer/user_location_shimmer_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/adventurous_learner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/adventurous_learner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons/name.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/name.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/apis/apis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/apis/apis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/apis/constant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/apis/constant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/controllers/auth/reset_password_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/controllers/auth/reset_password_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/controllers/constant_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/controllers/constant_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/controllers/map/location_detail_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/controllers/map/location_detail_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/controllers/map/map_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/controllers/map/map_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/controllers/review/review_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/controllers/review/review_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/google_map/google_map_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/google_map/google_map_utils.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/modals/map/place_detail_from_lat_long_response.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/modals/map/place_detail_response.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/modals/map/place_detail_response.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/controllers/splash_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/controllers/splash_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/modals/auth/check_email_register_response.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/modals/auth/check_email_register_response.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/modals/home/home_content_response.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/modals/home/home_content_response.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/modals/map/location_detail_response.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/modals/map/location_detail_response.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated/assets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/assets.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/add_place/add_place_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/add_place/add_place_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/add_review/add_review_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/add_review/add_review_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/add_review/widget/review_textfield_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/add_review/widget/review_textfield_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/auth/register/widget/register_name_field_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/auth/register/widget/register_name_field_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/auth/reset_password/forgot_password_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/auth/reset_password/forgot_password_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/auth/reset_password/otp_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/auth/reset_password/otp_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/auth/reset_password/reset_password_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/auth/reset_password/reset_password_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/auth/reset_password/widget/confirm_password_field_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/auth/reset_password/widget/confirm_password_field_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/home/widget/drawer_header_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home/widget/drawer_header_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/home/widget/drawer_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home/widget/drawer_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/map/widget/location_detail_parent_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/map/widget/location_detail_parent_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/map/widget/location_detail_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/map/widget/location_detail_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/place_detail/place_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/place_detail/place_detail_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/place_detail/widget/image_full_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/place_detail/widget/image_full_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/place_detail/widget/place_images_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/place_detail/widget/place_images_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/place_detail/widget/user_rating_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/place_detail/widget/user_rating_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/profile/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/common.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/common.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/const_color.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/const_color.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/const_string.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/const_string.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/image_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/image_utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +169,9 @@
       <recent name="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/data/controllers/profile" />
+      <recent name="$PROJECT_DIR$/lib/screens/add_location_for_yourself" />
+      <recent name="$PROJECT_DIR$/lib/screens/edit_profile" />
       <recent name="$PROJECT_DIR$/lib/screens/auth/register/widget" />
       <recent name="$PROJECT_DIR$/lib/screens/auth/login/widget" />
     </key>
@@ -102,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658424967028</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="UPDATES:&#10;&#10;* Removed unused code">
+      <created>1661746013441</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1661746013441</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,6 +233,7 @@
     <MESSAGE value="UPDATES:&#10;&#10;* System commit" />
     <MESSAGE value="UPDATES:&#10;&#10;* Milestone 1 completed" />
     <MESSAGE value="UPDATES:&#10;&#10;* Milestone 2 completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="UPDATES:&#10;&#10;* Milestone 2 completed" />
+    <MESSAGE value="UPDATES:&#10;&#10;* Removed unused code" />
+    <option name="LAST_COMMIT_MESSAGE" value="UPDATES:&#10;&#10;* Removed unused code" />
   </component>
 </project>

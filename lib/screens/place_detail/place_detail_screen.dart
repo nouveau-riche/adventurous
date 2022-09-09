@@ -53,7 +53,7 @@ class PlaceDetailScreen extends StatelessWidget {
                     unratedColor: Colors.black,
                     rating: location?.rating?.toDouble() ?? 0.0,
                     itemBuilder: (_, index) {
-                      if (index < (location?.rating?.toInt() ?? 0)) {
+                      if (index < (location?.rating ?? 0)) {
                         return const Icon(
                           Icons.star,
                           color: yellowColor,
@@ -198,7 +198,9 @@ class PlaceDetailScreen extends StatelessWidget {
                 );
               },
               itemBuilder: (_, index) {
-                return UserRatingWidget(reviews: location?.reviews?[index]);
+                return UserRatingWidget(
+                  reviews: location?.reviews?[index],
+                );
               },
               itemCount: location?.reviews?.length ?? 0,
             ),

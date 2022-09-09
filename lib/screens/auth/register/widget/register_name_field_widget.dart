@@ -26,7 +26,7 @@ class RegisterNameFieldWidget extends StatelessWidget {
           borderSide: BorderSide(color: greenColor2),
         ),
         icon: Image.asset(
-          Assets.iconsName,
+          Assets.iconsProfile,
           height: 20,
           color: kTextFieldIconColor,
         ),

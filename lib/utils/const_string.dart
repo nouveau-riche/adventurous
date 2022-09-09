@@ -5,8 +5,13 @@ class ConstString {
   final seeYouAgain = 'Hi there, nice to see you again';
   final login = 'Login';
   final email = 'Email';
+  final changeEmail = 'Change Email?';
+  final newName = 'New name';
+  final newBio = 'New bio';
   final password = 'Password';
   final forgotPassword = 'Forgot Password?';
+  final changePassword = 'Change Password?';
+
   final submit = 'Submit';
   final createNewProfile = 'Create New Profile';
   final createProfile = 'Create Profile';
@@ -15,6 +20,7 @@ class ConstString {
   final enterName = 'Enter name';
   final enterEmail = 'Enter email';
   final enterPassword = 'Enter password';
+  final enterLocation = 'Enter location';
   final alreadyHaveAccount = 'Already have a profile?';
   final next = 'Next';
   final enterEmailAtTimeOfCreatingAccount =
@@ -35,4 +41,22 @@ class ConstString {
       'Please allow location permission from app setting to fetch your location.';
 
   final learningOpportunity = 'Learning Opportunity';
+
+  final locationName = 'Location Name';
+  final locationBio = 'Location Bio';
+  final locationAddress = 'Location Address';
+  final address = 'Address';
+  final phoneNumber = 'Phone Number';
+  final locationContactNumber = 'Location Contact number';
+  final yourName = 'Your Name';
+  final yourContactEmail = 'Your contact email';
+  final thankYouForAddingLocation =
+      'Thank you for adding the\nlocation, it will be verified\nby the admin';
+  final close = 'Close';
+  final changeNameOrBio = "Change Name or Bio";
+  final save = "Save";
+  final enterNewEmail = "Please enter the new Email ID";
+
+  final itStartShowingAfterVerify =
+      'Thank you for adding the location\nonce it will be verified \nby admin, it’s start showing in\nyour visited location';
 }

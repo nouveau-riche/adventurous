@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 /// description : "User is not registered"
 /// status : true
 /// otp : 668861

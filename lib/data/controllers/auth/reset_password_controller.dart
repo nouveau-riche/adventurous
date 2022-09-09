@@ -26,7 +26,11 @@ class ResetPasswordController extends GetxController {
   final otpFormKey = GlobalKey<FormState>();
   final resetPasswordFormKey = GlobalKey<FormState>();
 
-  verifyPin({isResetPassword = false}) async {
+  verifyPin({
+    isResetPassword = false,
+    isResetEmail = false,
+    isResettingFromInside = false,
+  }) async {
     if (!(otpFormKey.currentState ?? FormState()).validate()) return;
 
     (otpFormKey.currentState ?? FormState()).save();
@@ -36,9 +40,31 @@ class ResetPasswordController extends GetxController {
       return;
     }
 
-    if (isResetPassword) {
+    if (isResetEmail) {
+      _startLoading();
+
+      String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
+
+      final response = await constCtr.apis.updateEmail(
+        token: token,
+        email: email,
+        otp: enteredOtp,
+      );
+
+      _stopLoading();
+
+      if (response != null) {
+        Get.back();
+        Get.back();
+        showSnackBar('Email updated successfully');
+      }
+
+      return;
+    } else if (isResetPassword) {
       Get.to(
-        () => const ResetPasswordScreen(),
+        () => ResetPasswordScreen(
+          isResettingFromInside: isResettingFromInside,
+        ),
         transition: Transition.rightToLeft,
       );
     } else {
@@ -70,7 +96,7 @@ class ResetPasswordController extends GetxController {
     update();
   }
 
-  get generateOtp async {
+  generateOtp(bool isResettingFromInside) async {
     if (!(formKey.currentState ?? FormState()).validate()) return;
 
     (formKey.currentState ?? FormState()).save();
@@ -88,12 +114,15 @@ class ResetPasswordController extends GetxController {
     pinCtr.clear();
 
     Get.to(
-      () => const OtpScreen(isResetPassword: true),
+      () => OtpScreen(
+        isResetPassword: true,
+        isResettingFromInside: isResettingFromInside,
+      ),
       transition: Transition.rightToLeft,
     );
   }
 
-  get resetPassword async {
+  resetPassword({bool isResettingFromInside = false}) async {
     if (!(resetPasswordFormKey.currentState ?? FormState()).validate()) return;
 
     (resetPasswordFormKey.currentState ?? FormState()).save();
@@ -109,6 +138,16 @@ class ResetPasswordController extends GetxController {
     _stopLoading();
 
     if (response == null) return;
+
+    if (isResettingFromInside) {
+      Get.back();
+      Get.back();
+      Get.back();
+
+      return;
+    }
+
+    showSnackBar('Password updated successfully');
 
     Get.offAll(
       () => const LoginScreen(),

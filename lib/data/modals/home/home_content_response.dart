@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 /// description : "Content fetched successfully"
 /// contentData : {"_id":"630248c48564bef07b93fec2","type":"HOME","description":"Hi! John Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lobortis enim, sit ullamcorperviverra. Integereuismod magna nec, varius pretium morbi. Nunc aliquet justo purus sit tempor. Eu sit eu libero nunc placerat libero nunc quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lobortis enim, situllamcorper viverra","createdAt":"2022-08-21T15:01:24.446Z","updatedAt":"2022-08-21T15:01:24.446Z","__v":0}
 /// status : true

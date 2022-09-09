@@ -5,6 +5,7 @@ import 'package:adventurous_learner_app/generated/assets.dart';
 import 'package:adventurous_learner_app/screens/home/widget/drawer_header_widget.dart';
 import 'package:adventurous_learner_app/screens/home/widget/drawer_tile_widget.dart';
 import 'package:adventurous_learner_app/data/controllers/auth/logout_controller.dart';
+import 'package:adventurous_learner_app/data/controllers/bottom_nav/bottom_nav_controller.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({Key? key}) : super(key: key);
@@ -18,7 +19,10 @@ class DrawerWidget extends StatelessWidget {
         DrawerTileWidget(
           image: Assets.iconsProfile,
           text: 'Profile',
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+            Get.put(BottomNavController()).selectPage(3);
+          },
         ),
         DrawerTileWidget(
           image: Assets.iconsNotification,
@@ -28,12 +32,18 @@ class DrawerWidget extends StatelessWidget {
         DrawerTileWidget(
           image: Assets.iconsMap,
           text: 'View Map',
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+            Get.put(BottomNavController()).selectPage(1);
+          },
         ),
         DrawerTileWidget(
           image: Assets.iconsAddPlace,
           text: 'Add Place',
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+            Get.put(BottomNavController()).selectPage(2);
+          },
         ),
         DrawerTileWidget(
           image: Assets.iconsLearning,

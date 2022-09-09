@@ -49,7 +49,7 @@ class ConfirmPasswordPasswordFieldWidget extends StatelessWidget {
             ),
           ),
           validator: (value) {
-            if (value.isNullOrEmpty) {
+            if ((value).isNullOrEmpty) {
               return 'Enter password';
             }
             if ((value ?? '').length < 6) {

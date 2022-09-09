@@ -8,7 +8,10 @@ import 'package:adventurous_learner_app/screens/place_detail/widget/place_images
 class UserRatingWidget extends StatelessWidget {
   final Reviews? reviews;
 
-  const UserRatingWidget({Key? key, this.reviews}) : super(key: key);
+  const UserRatingWidget({
+    Key? key,
+    this.reviews,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

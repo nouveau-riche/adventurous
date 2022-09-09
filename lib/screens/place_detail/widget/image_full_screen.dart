@@ -1,16 +1,23 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-import 'package:adventurous_learner_app/utils/constants.dart';
 import 'package:adventurous_learner_app/utils/image_utils.dart';
+import 'package:adventurous_learner_app/data/modals/map/location_detail_response.dart';
 
 class ImageFullScreen extends StatelessWidget {
-  final String imagePath;
+  final int initialIndex;
+  final List<Attachment> images;
 
-  const ImageFullScreen({Key? key, required this.imagePath}) : super(key: key);
+  const ImageFullScreen({
+    Key? key,
+    required this.initialIndex,
+    required this.images,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    PageController controller = PageController(initialPage: initialIndex);
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -28,26 +35,22 @@ class ImageFullScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: FutureBuilder<String?>(
-          future: constCtr.prefRepo.getUserXAccessToken(),
-          initialData: '',
-          builder: (_, snapshot) {
-            if ((snapshot.data) == null) {
-              return const SizedBox();
-            }
-
-            return getImageBuilder(
-              'https://adventurelearner.herokuapp.com/api/v1/app/read-file$imagePath',
-              snapshot.data ?? '',
+      body: PageView.builder(
+        itemBuilder: (_, index) {
+          return getImageBuilder(
+            images[index].filePath ?? '',
+            BorderRadius.circular(0),
+            fit: BoxFit.cover,
+            placeHolder: placeHolderImage(
+              Get.height,
+              Get.width,
               BorderRadius.circular(0),
-              fit: BoxFit.cover,
-              placeHolder: placeHolderImage(
-                Get.height,
-                Get.width,
-                BorderRadius.circular(0),
-              ),
-            );
-          }),
+            ),
+          );
+        },
+        controller: controller,
+        itemCount: images.length,
+      ),
     );
   }
 }

@@ -77,7 +77,7 @@ class MapController extends GetxController {
     );
   }
 
-  addMarkerForAllLocation(List<LocationDetail> locationDetails) {
+  addMarkerForAllLocation(List<LocationDetail> locationDetails) async {
     if (locationDetails.isEmpty) return;
 
     int index = 0;

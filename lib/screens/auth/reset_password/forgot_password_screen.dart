@@ -11,7 +11,12 @@ import 'package:adventurous_learner_app/data/controllers/auth/reset_password_con
 import 'package:adventurous_learner_app/screens/auth/reset_password/widget/forgot_passord_email_field_widget.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
-  const ForgotPasswordScreen({Key? key}) : super(key: key);
+  final bool isResettingFromInside;
+
+  const ForgotPasswordScreen({
+    Key? key,
+    this.isResettingFromInside = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +45,9 @@ class ForgotPasswordScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 25),
                 Text(
-                  constCtr.strings.forgotPassword,
+                  isResettingFromInside
+                      ? constCtr.strings.changePassword
+                      : constCtr.strings.forgotPassword,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
@@ -78,7 +85,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              onPressed: () => ctr.generateOtp,
+              onPressed: () => ctr.generateOtp(isResettingFromInside),
               radius: 10,
             );
           },

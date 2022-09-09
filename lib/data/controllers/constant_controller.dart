@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import 'package:adventurous_learner_app/utils/common.dart';
 import 'package:adventurous_learner_app/data/apis/utils.dart';
 import 'package:adventurous_learner_app/data/apis/apis.dart';
 import 'package:adventurous_learner_app/utils/const_string.dart';
@@ -10,4 +11,11 @@ class ConstantController extends GetxController {
   final apis = Apis();
   final apiUtils = ApiUtils();
   final prefRepo = PrefRepository();
+
+  String token = '';
+
+  updateToken(String value) {
+    token = value;
+    printLog('This is token: $token');
+  }
 }

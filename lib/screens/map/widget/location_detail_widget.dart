@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import 'package:adventurous_learner_app/utils/constants.dart';
 import 'package:adventurous_learner_app/utils/image_utils.dart';
 import 'package:adventurous_learner_app/utils/const_color.dart';
 import 'package:adventurous_learner_app/screens/place_detail/place_detail_screen.dart';
@@ -113,30 +112,19 @@ class LocationDetailWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(width: 10),
-            FutureBuilder<String?>(
-              future: constCtr.prefRepo.getUserXAccessToken(),
-              initialData: '',
-              builder: (_, snapshot) {
-                if ((snapshot.data) == null) {
-                  return const SizedBox();
-                }
-
-                return getImageBuilder(
-                  ((location?.attachment ?? []).isNotEmpty)
-                      ? ('https://adventurelearner.herokuapp.com/api/v1/app/read-file${location?.attachment?[0].filePath}')
-                      : '',
-                  snapshot.data ?? '',
-                  BorderRadius.circular(10),
-                  height: 57,
-                  width: 68,
-                  fit: BoxFit.fill,
-                  placeHolder: placeHolderImage(
-                    57,
-                    68,
-                    BorderRadius.circular(10),
-                  ),
-                );
-              },
+            getImageBuilder(
+              ((location?.attachment ?? []).isNotEmpty)
+                  ? (location?.attachment?[0].filePath)
+                  : '',
+              BorderRadius.circular(10),
+              height: 57,
+              width: 68,
+              fit: BoxFit.fill,
+              placeHolder: placeHolderImage(
+                57,
+                68,
+                BorderRadius.circular(10),
+              ),
             ),
           ],
         ),

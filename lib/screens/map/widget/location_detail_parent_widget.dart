@@ -26,6 +26,7 @@ class LocationDetailParentWidget extends StatelessWidget {
             height: 134,
             child: ListView.builder(
               shrinkWrap: true,
+              controller: ctr.scrollCtr,
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.fromLTRB(20, 20, 20, 30),

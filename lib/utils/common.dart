@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:adventurous_learner_app/utils/const_color.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 printLog(dynamic value, {bool isError = false}) {
   if (kDebugMode) {

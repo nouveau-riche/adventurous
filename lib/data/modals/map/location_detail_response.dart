@@ -9,6 +9,7 @@ class LocationDetailResponse {
     this.description,
     this.status,
     this.data,
+    this.total,
   });
 
   LocationDetailResponse.fromJson(dynamic json) {
@@ -20,21 +21,25 @@ class LocationDetailResponse {
         data?.add(LocationDetail.fromJson(v));
       });
     }
+    total = json['total'];
   }
 
   String? description;
   bool? status;
   List<LocationDetail>? data;
+  int? total;
 
   LocationDetailResponse copyWith({
     String? description,
     bool? status,
     List<LocationDetail>? data,
+    int? total,
   }) =>
       LocationDetailResponse(
         description: description ?? this.description,
         status: status ?? this.status,
         data: data ?? this.data,
+        total: total ?? this.total,
       );
 
   Map<String, dynamic> toJson() {
@@ -44,6 +49,7 @@ class LocationDetailResponse {
     if (data != null) {
       map['data'] = data?.map((v) => v.toJson()).toList();
     }
+    map['total'] = total;
     return map;
   }
 }

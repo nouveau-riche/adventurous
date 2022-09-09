@@ -66,7 +66,6 @@ class ReviewController extends GetxController {
     }
   }
 
-
   removeImage(int index) {
     selectedImages.removeAt(index);
     update();

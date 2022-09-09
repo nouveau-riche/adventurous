@@ -10,25 +10,49 @@ import 'package:adventurous_learner_app/data/modals/map/location_detail_response
 
 class LocationDetailController extends GetxController {
   bool isLoading = false;
+  bool _noMoreResult = false;
+  ScrollController scrollCtr = ScrollController();
+
+  double latitude = 0.0;
+  double longitude = 0.0;
+  int _currentPage = 0;
 
   List<LocationDetail> locationDetails = [];
 
-  getToken() async {
-    return await constCtr.prefRepo.getUserXAccessToken() ?? '';
+  @override
+  onInit() {
+    _initScrollListener();
+    super.onInit();
   }
 
   fetchLocationDetails(double lat, double long) async {
+    if (latitude == 0.0 && longitude == 0.0) {
+      latitude = lat;
+      longitude = long;
+    }
+
     _startLoading();
 
     String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
 
-    final response = await constCtr.apis.getLocationDetails(lat, long, token);
+    final response = await constCtr.apis.getLocationDetails(
+      lat,
+      long,
+      token,
+      _currentPage * 10,
+      10,
+    );
 
     _stopLoading();
 
     if (response != null && response.status!) {
       locationDetails.addAll(response.data ?? []);
       update();
+
+      if ((response.total ?? 0) < (_currentPage + 1) * 10) {
+        _noMoreResult = true;
+      }
+
       Get.put(MapController()).addMarkerForAllLocation(locationDetails);
     }
   }
@@ -46,7 +70,13 @@ class LocationDetailController extends GetxController {
 
     String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
 
-    final response = await constCtr.apis.getLocationDetails(lat, long, token);
+    final response = await constCtr.apis.getLocationDetails(
+      lat,
+      long,
+      token,
+      0,
+      (_currentPage+1) * 10,
+    );
 
     _stopLoading();
 
@@ -69,6 +99,32 @@ class LocationDetailController extends GetxController {
         transition: Transition.rightToLeft,
       );
     }
+  }
+
+  _updatePage() {
+    _currentPage++;
+  }
+
+  _paginationMethod() {
+    if (isLoading || _noMoreResult) return;
+
+    _updatePage();
+    fetchLocationDetails(latitude, longitude);
+  }
+
+  listEndReached() {
+    _paginationMethod();
+  }
+
+  _initScrollListener() async {
+    scrollCtr.addListener(() {
+      var nextPageTrigger = 0.8 * scrollCtr.position.maxScrollExtent;
+      if (scrollCtr.position.pixels > nextPageTrigger) {
+        printLog("List end reached...");
+
+        listEndReached();
+      }
+    });
   }
 
   _startLoading() {

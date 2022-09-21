@@ -15,7 +15,7 @@ class YourselfPhoneNumberFieldWidget extends StatelessWidget {
     final ctr = Get.put(AddLocationForYourself());
 
     return TextFormField(
-      cursorColor: greenColor2,
+      cursorColor: oliveColor,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
         hintText: constCtr.strings.locationContactNumber,
@@ -27,7 +27,7 @@ class YourselfPhoneNumberFieldWidget extends StatelessWidget {
           borderSide: BorderSide(color: greyColor5, width: 1.4),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: greenColor2, width: 1.4),
+          borderSide: BorderSide(color: oliveColor, width: 1.4),
         ),
         icon: Image.asset(
           Assets.iconsPhone,

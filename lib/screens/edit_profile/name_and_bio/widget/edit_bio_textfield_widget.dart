@@ -15,7 +15,7 @@ class EditBioTextFieldWidget extends StatelessWidget {
     final ctr = Get.put(EditNameAndBioController());
 
     return TextFormField(
-      cursorColor: greenColor2,
+      cursorColor: oliveColor,
       maxLines: 2,
       decoration: InputDecoration(
         hintText: constCtr.strings.newBio,
@@ -28,7 +28,7 @@ class EditBioTextFieldWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(6),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: greenColor2, width: 1.4),
+          borderSide: const BorderSide(color: oliveColor, width: 1.4),
           borderRadius: BorderRadius.circular(6),
         ),
         errorBorder: OutlineInputBorder(

@@ -53,9 +53,7 @@ class PlaceDetailVerticalWidget extends StatelessWidget {
                       : '',
                   height: 252,
                   width: 176,
-                  httpHeaders: {
-                    'x-access-token': constCtr.token,
-                  },
+                  httpHeaders: {'x-access-token': constCtr.token},
                   imageBuilder: (_, imageProvider) => Container(
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.only(
@@ -101,7 +99,7 @@ class PlaceDetailVerticalWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  location?.address ?? '',
+                  location?.description ?? '',
                   overflow: TextOverflow.ellipsis,
                   maxLines: 3,
                   style: const TextStyle(

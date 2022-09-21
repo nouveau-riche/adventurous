@@ -31,14 +31,14 @@ class AddNewVisitedLocationWidget extends StatelessWidget {
             },
             icon: const Icon(
               Icons.add,
-              color: greenColor3,
+              color: oliveColor,
               size: 17,
             ),
             label: const Text(
               'Add New Visit',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: greenColor3,
+                color: oliveColor,
                 fontSize: 12,
               ),
             ),

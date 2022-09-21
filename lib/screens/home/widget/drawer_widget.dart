@@ -2,10 +2,16 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 import 'package:adventurous_learner_app/generated/assets.dart';
+import 'package:adventurous_learner_app/screens/about_us/about_us_screen.dart';
+import 'package:adventurous_learner_app/screens/contact_us/contact_us_screen.dart';
+import 'package:adventurous_learner_app/screens/learning_module/learning_modules_screen.dart';
+import 'package:adventurous_learner_app/screens/notification/notification_screen.dart';
+import 'package:adventurous_learner_app/screens/privacy_policy/privacy_policy_screen.dart';
 import 'package:adventurous_learner_app/screens/home/widget/drawer_header_widget.dart';
 import 'package:adventurous_learner_app/screens/home/widget/drawer_tile_widget.dart';
 import 'package:adventurous_learner_app/data/controllers/auth/logout_controller.dart';
 import 'package:adventurous_learner_app/data/controllers/bottom_nav/bottom_nav_controller.dart';
+import 'package:share_plus/share_plus.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({Key? key}) : super(key: key);
@@ -25,9 +31,15 @@ class DrawerWidget extends StatelessWidget {
           },
         ),
         DrawerTileWidget(
-          image: Assets.iconsNotification,
+          image: Assets.iconsBell,
           text: 'Notification',
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+            Get.to(
+              () => const NotificationScreen(),
+              transition: Transition.rightToLeft,
+            );
+          },
         ),
         DrawerTileWidget(
           image: Assets.iconsMap,
@@ -48,27 +60,53 @@ class DrawerWidget extends StatelessWidget {
         DrawerTileWidget(
           image: Assets.iconsLearning,
           text: 'Learning Modules',
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+            Get.to(
+              () => const LearningModulesScreen(),
+              transition: Transition.rightToLeft,
+            );
+          },
         ),
         DrawerTileWidget(
           image: Assets.iconsContact,
           text: 'Contact Us',
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+            Get.to(
+              () => const ContactUsScreen(),
+              transition: Transition.rightToLeft,
+            );
+          },
         ),
         DrawerTileWidget(
           image: Assets.iconsAbout,
           text: 'About Us',
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+            Get.to(
+              () => const AboutUsScreen(),
+              transition: Transition.rightToLeft,
+            );
+          },
         ),
         DrawerTileWidget(
           image: Assets.iconsPrivacy,
           text: 'Privacy Policy',
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+            Get.to(
+              () => const PrivacyPolicyScreen(),
+              transition: Transition.rightToLeft,
+            );
+          },
         ),
         DrawerTileWidget(
           image: Assets.iconsShare,
           text: 'Share The App',
-          onPressed: () {},
+          onPressed: () {
+            Share.share('check out adventurous app on playstore');
+          },
         ),
         DrawerTileWidget(
           image: Assets.iconsLogout,

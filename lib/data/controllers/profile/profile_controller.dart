@@ -22,9 +22,7 @@ class ProfileController extends GetxController {
   fetchUserProfile() async {
     _startLoading();
 
-    String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
-
-    final response = await constCtr.apis.getUserProfile(token);
+    final response = await constCtr.apis.getUserProfile(constCtr.token);
 
     _stopLoading();
 
@@ -50,9 +48,7 @@ class ProfileController extends GetxController {
       profileImage = file;
       update();
 
-      String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
-
-      await constCtr.apis.updateImage(image: file, token: token);
+      await constCtr.apis.updateImage(image: file, token: constCtr.token);
     }
   }
 

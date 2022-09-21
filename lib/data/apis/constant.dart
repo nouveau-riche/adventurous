@@ -8,8 +8,6 @@ class ApiConstants {
   final baseUrl = "https://adventurelearner.herokuapp.com/api/v1/";
   final googleMapsBaseUrl = 'https://maps.googleapis.com/maps/api/';
 
-  // api/v1/
-
   String get checkEmailRegisterUrl => '${baseUrl}app/user-email-register';
 
   String get registerUserUrl => '${baseUrl}app/create-user';
@@ -52,6 +50,12 @@ class ApiConstants {
 
   String get updateProfileImageUrl => '${baseUrl}app/update-profile-image';
 
+  String get getContactDetailsUrl => '${baseUrl}contact/get';
+
+  String get getLearningModuleUrl => '${baseUrl}module/get';
+
+  String get getNotificationUrl => '${baseUrl}notification/get-notifications';
+
   final tagHomeScreenContent = 'HOME';
 
   final paramUserEmail = 'user_email';
@@ -85,4 +89,8 @@ class ApiConstants {
   final paramSearch = "search";
   final paramContactName = "contactName";
   final paramContactEmail = "contactEmail";
+  final paramPlayerId = "playerID";
+  final paramDeviceOs = "deviceOS";
+  final paramCreatedBy = "createdBy";
+  final paramCreatedByName = "createdByName";
 }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:adventurous_learner_app/generated/assets.dart';
 import 'package:adventurous_learner_app/utils/const_color.dart';
 import 'package:adventurous_learner_app/utils/constants.dart';
+import 'package:adventurous_learner_app/utils/widgets/notification_bt_widget.dart';
 import 'package:adventurous_learner_app/screens/home/widget/drawer_widget.dart';
 import 'package:adventurous_learner_app/data/controllers/home/home_controller.dart';
 import 'package:adventurous_learner_app/utils/widgets/shimmer/home_screen_shimmmer_widget.dart';
@@ -17,24 +18,14 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: greenColor3,
+        backgroundColor: oliveColor,
         title: Text(
           constCtr.strings.appName,
           style: const TextStyle(color: Colors.white),
         ),
         elevation: 0,
         centerTitle: true,
-        actions: [
-          IconButton(
-            splashColor: Colors.transparent,
-            onPressed: () {},
-            icon: Image.asset(
-              Assets.iconsNotification,
-              height: 20,
-              width: 20,
-            ),
-          ),
-        ],
+        actions: const [NotificationBtWidget()],
       ),
       drawer: const Drawer(child: DrawerWidget()),
       body: SafeArea(
@@ -73,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                               fontWeight: FontWeight.w800,
                               fontSize: 19,
                               letterSpacing: 1,
-                              color: greenColor3,
+                              color: oliveColor,
                             ),
                           ),
                         ],

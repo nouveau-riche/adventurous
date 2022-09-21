@@ -14,7 +14,7 @@ class RegisterEmailFieldWidget extends StatelessWidget {
     final ctr = Get.put(RegisterController());
 
     return TextFormField(
-      cursorColor: greenColor2,
+      cursorColor: oliveColor,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         hintText: constCtr.strings.enterEmail,
@@ -23,7 +23,7 @@ class RegisterEmailFieldWidget extends StatelessWidget {
           fontWeight: FontWeight.w500,
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: greenColor2),
+          borderSide: BorderSide(color: oliveColor),
         ),
         icon: const Icon(
           Icons.alternate_email_outlined,

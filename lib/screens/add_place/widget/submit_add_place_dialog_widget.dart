@@ -16,7 +16,7 @@ submitAddPlaceDialog(String text,Function onPressed) {
         mainAxisSize: MainAxisSize.min,
         children: [
           const CircleAvatar(
-            backgroundColor: greenColor3,
+            backgroundColor: oliveColor,
             radius: 28,
             child: Icon(
               Icons.done,

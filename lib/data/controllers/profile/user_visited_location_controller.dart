@@ -22,9 +22,7 @@ class UserVisitedLocationController extends GetxController {
   fetchUserVisitedLocation() async {
     _startLoading();
 
-    String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
-
-    final response = await constCtr.apis.getUserLocation(token);
+    final response = await constCtr.apis.getUserLocation(constCtr.token);
 
     _stopLoading();
 
@@ -44,6 +42,16 @@ class UserVisitedLocationController extends GetxController {
 
       update();
     }
+  }
+
+  int getLocationIndex(String id) {
+    for (int i = 0; i < locations.length; i++) {
+      if (locations[i].locationId == id) {
+        return i;
+      }
+    }
+
+    return 0;
   }
 
   _startLoading() {

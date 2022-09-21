@@ -18,7 +18,7 @@ class VisitedLocationAddressWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 14),
       child: TextField(
         controller: ctr.locationAddressCtr,
-        cursorColor: greenColor2,
+        cursorColor: oliveColor,
         decoration: InputDecoration(
           hintText: constCtr.strings.locationAddress,
           hintStyle: const TextStyle(
@@ -29,7 +29,7 @@ class VisitedLocationAddressWidget extends StatelessWidget {
             borderSide: BorderSide(color: greyColor5, width: 1.4),
           ),
           focusedBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: greenColor2, width: 1.4),
+            borderSide: BorderSide(color: oliveColor, width: 1.4),
           ),
           icon: Image.asset(
             Assets.iconsAddress,

@@ -11,9 +11,8 @@ class HomeController extends GetxController {
 
   _fetchHomeScreenContent() async {
     _startLoading();
-    String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
 
-    final response = await constCtr.apis.getHomeScreenContent(token);
+    final response = await constCtr.apis.getHomeScreenContent(constCtr.token);
 
     _stopLoading();
 

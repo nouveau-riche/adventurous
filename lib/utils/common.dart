@@ -36,7 +36,7 @@ showSnackBar(String message, {isError = false}) {
       duration: const Duration(seconds: 3),
       snackStyle: SnackStyle.FLOATING,
       snackPosition: SnackPosition.TOP,
-      backgroundColor: isError ? Colors.red : greenColor1,
+      backgroundColor: isError ? Colors.red : oliveColor,
     ),
   );
 }
@@ -44,5 +44,22 @@ showSnackBar(String message, {isError = false}) {
 void openURL(String url) async => await canLaunchUrl(Uri.parse(url))
     ? await launchUrl(Uri.parse(url))
     : showSnackBar("Oops! Something went wrong", isError: true);
+
+String? encodeQueryParameters(Map<String, String> params) {
+  return params.entries
+      .map((MapEntry<String, String> e) =>
+          '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+      .join('&');
+}
+
+void openMail(String email) async => await launchUrl(
+      Uri(
+        scheme: 'mailto',
+        path: email,
+        query: encodeQueryParameters(<String, String>{
+          'subject': 'Thanks for contacting us!',
+        }),
+      ),
+    );
 
 hideKeyBoard() => SystemChannels.textInput.invokeMethod('TextInput.hide');

@@ -42,10 +42,17 @@ class OtpScreen extends StatelessWidget {
                 children: [
                   Stack(
                     children: [
-                      Image.asset(
-                        Assets.imagesEnterOtp,
-                        width: Get.width,
-                        height: Get.height * 0.42,
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 8,
+                          left: 30,
+                          right: 30,
+                        ),
+                        child: Image.asset(
+                          Assets.imagesPassword,
+                          width: Get.width,
+                          height: Get.height * 0.42,
+                        ),
                       ),
                       Positioned(
                         top: 10,
@@ -93,7 +100,7 @@ class OtpScreen extends StatelessWidget {
                         keyboardType: TextInputType.number,
                         textStyle: const TextStyle(color: Colors.black),
                         animationType: AnimationType.fade,
-                        cursorColor: greenColor1,
+                        cursorColor: oliveColor,
                         pinTheme: PinTheme(
                           shape: PinCodeFieldShape.box,
                           borderRadius: BorderRadius.circular(1),
@@ -103,9 +110,9 @@ class OtpScreen extends StatelessWidget {
                           activeFillColor: Colors.white,
                           inactiveFillColor: Colors.white,
                           selectedFillColor: Colors.white,
-                          selectedColor: greenColor1,
+                          selectedColor: oliveColor,
                           inactiveColor: Colors.black,
-                          activeColor: greenColor1,
+                          activeColor: oliveColor,
                         ),
                         errorTextMargin: const EdgeInsets.only(top: 38),
                         animationDuration: const Duration(milliseconds: 300),

@@ -57,12 +57,26 @@ dependencies:
   # read more
   readmore: ^2.1.0
 
-  # highlighting substring
-  substring_highlight: ^1.0.33
+  # notifications
+  onesignal_flutter: ^3.4.1
+
+  # firebase
+  firebase_core: ^1.22.0
+
+  # date formatting
+  intl: ^0.17.0
+
+  # timeago
+  timeago: ^3.3.0
+
+  # open pdf
+  flutter_cached_pdfview: ^0.4.1
 
   # typeahead
-  flutter_typeahead: ^4.0.0
+  flutter_typeahead: ^4.1.1
 
+  # share app
+  share_plus: ^4.2.0
 
 dev_dependencies:
   flutter_test:

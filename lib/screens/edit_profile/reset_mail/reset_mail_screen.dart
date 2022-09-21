@@ -27,10 +27,17 @@ class ResetMailScreen extends StatelessWidget {
               children: [
                 Stack(
                   children: [
-                    Image.asset(
-                      Assets.imagesForgotPassword,
-                      width: Get.width,
-                      height: Get.height * 0.42,
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 8,
+                        left: 30,
+                        right: 30,
+                      ),
+                      child: Image.asset(
+                        Assets.imagesPassword,
+                        width: Get.width,
+                        height: Get.height * 0.42,
+                      ),
                     ),
                     const Positioned(
                       top: 10,

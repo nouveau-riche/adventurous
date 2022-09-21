@@ -14,7 +14,7 @@ class ReviewTextFieldWidget extends StatelessWidget {
     final ctr = Get.put(ReviewController());
 
     return TextField(
-      cursorColor: greenColor2,
+      cursorColor: oliveColor,
       controller: ctr.reviewTextCtr,
       decoration: InputDecoration(
         hintText: constCtr.strings.review,
@@ -26,7 +26,7 @@ class ReviewTextFieldWidget extends StatelessWidget {
           borderSide: BorderSide(color: greyColor5, width: 1.4),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: greenColor2, width: 1.4),
+          borderSide: BorderSide(color: oliveColor, width: 1.4),
         ),
         icon: Image.asset(
           Assets.iconsReview,

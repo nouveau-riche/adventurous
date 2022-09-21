@@ -21,11 +21,9 @@ class ResetMailController extends GetxController {
 
     hideKeyBoard();
 
-    String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
-
     final response = await constCtr.apis.checkEmailExists(
       email: email,
-      token: token,
+      token: constCtr.token,
     );
 
     _stopLoading();

@@ -32,10 +32,8 @@ class AddVisitedLocationController extends GetxController {
 
     _startLoading();
 
-    String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
-
     final response = await constCtr.apis.addVisitedLocation(
-      token: token,
+      token: constCtr.token,
       locationId: selectedLocation?.locationId ?? '',
     );
 

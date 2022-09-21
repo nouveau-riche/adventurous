@@ -17,7 +17,7 @@ class ConfirmPasswordPasswordFieldWidget extends StatelessWidget {
     return GetBuilder<ResetPasswordController>(
       builder: (_) {
         return TextFormField(
-          cursorColor: greenColor2,
+          cursorColor: oliveColor,
           obscureText: ctr.isPasswordVisible,
           decoration: InputDecoration(
             hintText: constCtr.strings.confirmNewPassword,
@@ -26,7 +26,7 @@ class ConfirmPasswordPasswordFieldWidget extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
             focusedBorder: const UnderlineInputBorder(
-              borderSide: BorderSide(color: greenColor2),
+              borderSide: BorderSide(color: oliveColor),
             ),
             suffixIcon: IconButton(
               onPressed: () {
@@ -35,8 +35,8 @@ class ConfirmPasswordPasswordFieldWidget extends StatelessWidget {
               splashColor: Colors.transparent,
               icon: Icon(
                 ctr.isPasswordVisible
-                    ? Icons.visibility_outlined
-                    : Icons.visibility_off_outlined,
+                    ? Icons.visibility_off_outlined
+                    : Icons.visibility_outlined,
                 color: kTextFieldIconColor,
                 size: 20,
               ),

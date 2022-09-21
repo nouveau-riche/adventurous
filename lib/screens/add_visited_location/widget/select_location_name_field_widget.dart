@@ -17,7 +17,7 @@ class SelectLocationNameFieldWidget extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 14),
           child: TextField(
-            cursorColor: greenColor2,
+            cursorColor: oliveColor,
             controller: ctr.locationNameCtr,
             decoration: InputDecoration(
               icon: Image.asset(
@@ -50,7 +50,7 @@ class SelectLocationNameFieldWidget extends StatelessWidget {
           //   textFieldConfiguration: TextFieldConfiguration(
           //     controller: ctr.locationNameCtr,
           //     textInputAction: TextInputAction.done,
-          //     cursorColor: greenColor2,
+          //     cursorColor: oliveColor,
           //     autocorrect: false,
           //     onChanged: (value) {
           //       ctr.fetchLocationForSearching(value);

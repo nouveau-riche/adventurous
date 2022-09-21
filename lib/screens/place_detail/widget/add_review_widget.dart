@@ -53,14 +53,14 @@ class AddReviewWidget extends StatelessWidget {
             },
             icon: const Icon(
               Icons.add,
-              color: greenColor3,
+              color: oliveColor,
               size: 20,
             ),
             label: const Text(
               'Add Review',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: greenColor3,
+                color: oliveColor,
                 fontSize: 15,
               ),
             ),

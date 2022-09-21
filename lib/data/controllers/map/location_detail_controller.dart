@@ -33,12 +33,10 @@ class LocationDetailController extends GetxController {
 
     _startLoading();
 
-    String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
-
     final response = await constCtr.apis.getLocationDetails(
       lat,
       long,
-      token,
+      constCtr.token,
       _currentPage * 10,
       10,
     );
@@ -62,20 +60,15 @@ class LocationDetailController extends GetxController {
 
     final mapCtr = Get.put(MapController());
 
-    // double lat = mapCtr.currentLatitude ?? defaultLatitude;
-    // double long = mapCtr.currentLongitude ?? defaultLongitude;
-
-    double lat = defaultLatitude;
-    double long = defaultLongitude;
-
-    String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
+    double lat = mapCtr.currentLatitude;
+    double long = mapCtr.currentLongitude;
 
     final response = await constCtr.apis.getLocationDetails(
       lat,
       long,
-      token,
+      constCtr.token,
       0,
-      (_currentPage+1) * 10,
+      (_currentPage + 1) * 10,
     );
 
     _stopLoading();
@@ -126,6 +119,17 @@ class LocationDetailController extends GetxController {
       }
     });
   }
+
+  int getLocationIndex(String id) {
+    for (int i = 0; i < locationDetails.length; i++) {
+      if (locationDetails[i].locationId == id) {
+        return i;
+      }
+    }
+
+    return 0;
+  }
+
 
   _startLoading() {
     isLoading = true;

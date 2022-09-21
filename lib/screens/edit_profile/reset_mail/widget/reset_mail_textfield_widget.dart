@@ -14,7 +14,7 @@ class ResetEmailFieldWidget extends StatelessWidget {
     final ctr = Get.put(ResetMailController());
 
     return TextFormField(
-      cursorColor: greenColor2,
+      cursorColor: oliveColor,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         hintText: constCtr.strings.email,
@@ -23,7 +23,7 @@ class ResetEmailFieldWidget extends StatelessWidget {
           fontWeight: FontWeight.w500,
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: greenColor2),
+          borderSide: BorderSide(color: oliveColor),
         ),
         icon: const Icon(
           Icons.alternate_email_outlined,

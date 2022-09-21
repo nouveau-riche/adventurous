@@ -1,10 +1,10 @@
-import 'package:adventurous_learner_app/screens/add_visited_location/widget/location_suggestion_widget.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 import 'package:adventurous_learner_app/generated/assets.dart';
 import 'package:adventurous_learner_app/utils/const_color.dart';
 import 'package:adventurous_learner_app/utils/widgets/back_button_widget.dart';
+import 'package:adventurous_learner_app/screens/add_visited_location/widget/location_suggestion_widget.dart';
 import 'package:adventurous_learner_app/screens/add_visited_location/widget/didnt_find_location_widget.dart';
 import 'package:adventurous_learner_app/screens/add_visited_location/widget/visited_location_address_widget.dart';
 import 'package:adventurous_learner_app/screens/add_visited_location/widget/select_location_name_field_widget.dart';
@@ -17,7 +17,7 @@ class AddVisitedLocationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: greenColor3,
+        backgroundColor: oliveColor,
         leading: const BackButtonWidget(color: Colors.white),
         title: const Text(
           'New Visited Location',

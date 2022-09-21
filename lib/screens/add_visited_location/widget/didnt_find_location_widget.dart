@@ -24,7 +24,7 @@ class DidntFindLocationWidget extends StatelessWidget {
           },
           child: const Text(
             'Add New Location',
-            style: TextStyle(color: greenColor1, fontSize: 15),
+            style: TextStyle(color: oliveColor, fontSize: 15),
           ),
         ),
       ],

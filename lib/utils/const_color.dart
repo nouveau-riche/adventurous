@@ -4,10 +4,7 @@ const kSecondaryTextColor = Color.fromRGBO(42, 42, 42, 0.6);
 const kHintTextColor = Color.fromRGBO(42, 42, 42, 0.8);
 const kTextFieldIconColor = Color.fromRGBO(122, 134, 154, 0.8);
 
-
-const greenColor1 = Color.fromRGBO(144, 232, 46, 1);
-const greenColor2 = Color.fromRGBO(29, 176, 54, 1);
-const greenColor3 = Color.fromRGBO(123, 221, 47, 1);
+const oliveColor = Color.fromRGBO(136, 137, 121, 1);
 
 const yellowColor = Color.fromRGBO(239, 230, 0, 1);
 
@@ -19,3 +16,4 @@ const greyColor5 = Color.fromRGBO(223, 225, 229, 1);
 const greyColor6 = Color.fromRGBO(140, 128, 128, 1);
 const greyColor7 = Color.fromRGBO(32, 34, 53, 0.1);
 const greyColor8 = Color.fromRGBO(87, 87, 87, 1);
+const greyColor9 = Color.fromRGBO(126, 126, 126, 1);

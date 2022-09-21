@@ -40,7 +40,9 @@ class ImageFullScreen extends StatelessWidget {
           return getImageBuilder(
             images[index].filePath ?? '',
             BorderRadius.circular(0),
-            fit: BoxFit.cover,
+            fit: BoxFit.contain,
+            height: Get.height,
+            width: Get.width,
             placeHolder: placeHolderImage(
               Get.height,
               Get.width,

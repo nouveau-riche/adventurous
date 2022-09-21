@@ -15,7 +15,7 @@ class RegisterNameFieldWidget extends StatelessWidget {
     final ctr = Get.put(RegisterController());
 
     return TextFormField(
-      cursorColor: greenColor2,
+      cursorColor: oliveColor,
       decoration: InputDecoration(
         hintText: constCtr.strings.enterName,
         hintStyle: const TextStyle(
@@ -23,7 +23,7 @@ class RegisterNameFieldWidget extends StatelessWidget {
           fontWeight: FontWeight.w500,
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: greenColor2),
+          borderSide: BorderSide(color: oliveColor),
         ),
         icon: Image.asset(
           Assets.iconsProfile,

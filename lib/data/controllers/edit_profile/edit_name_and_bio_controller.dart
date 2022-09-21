@@ -28,12 +28,10 @@ class EditNameAndBioController extends GetxController {
 
     (formKey.currentState ?? FormState()).save();
 
-    String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
-
     _startLoading();
 
     final response = await constCtr.apis.updateNameAndBio(
-      token: token,
+      token: constCtr.token,
       name: name,
       bio: bio,
       location: location,

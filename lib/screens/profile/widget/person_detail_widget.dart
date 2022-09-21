@@ -41,7 +41,7 @@ class PersonalDetailWidget extends StatelessWidget {
                       bottom: 2,
                       right: 2,
                       child: CircleAvatar(
-                        backgroundColor: greenColor3,
+                        backgroundColor: oliveColor,
                         radius: 12,
                         child: IconButton(
                           padding: const EdgeInsets.all(4),
@@ -75,7 +75,7 @@ class PersonalDetailWidget extends StatelessWidget {
                       bottom: 2,
                       right: 2,
                       child: CircleAvatar(
-                        backgroundColor: greenColor3,
+                        backgroundColor: oliveColor,
                         radius: 12,
                         child: IconButton(
                           padding: const EdgeInsets.all(4),

@@ -29,7 +29,7 @@ class UserRatingWidget extends StatelessWidget {
                 width: 44,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: greenColor3,
+                  color: oliveColor,
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: Text(
@@ -59,11 +59,11 @@ class UserRatingWidget extends StatelessWidget {
             trimCollapsedText: 'more',
             trimExpandedText: 'less',
             moreStyle: const TextStyle(
-              color: greenColor3,
+              color: oliveColor,
               fontWeight: FontWeight.bold,
             ),
             lessStyle: const TextStyle(
-              color: greenColor3,
+              color: oliveColor,
               fontWeight: FontWeight.bold,
             ),
           ),

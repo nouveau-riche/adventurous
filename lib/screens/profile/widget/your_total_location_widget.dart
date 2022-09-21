@@ -26,13 +26,13 @@ class YourTotalLocationWidget extends StatelessWidget {
         width: 222,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          border: Border.all(color: greenColor3),
+          border: Border.all(color: oliveColor),
         ),
         alignment: Alignment.center,
         child: Text(
           'Your $totalLocation Visited locations',
           style: const TextStyle(
-            color: greenColor3,
+            color: oliveColor,
             fontSize: 15,
           ),
         ),

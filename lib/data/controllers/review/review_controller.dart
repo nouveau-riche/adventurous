@@ -47,13 +47,11 @@ class ReviewController extends GetxController {
 
     _startLoading();
 
-    final token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
-
     final response = await constCtr.apis.addRating(
       rating.toInt(),
       reviewTextCtr.text,
       location?.locationId ?? '',
-      token,
+      constCtr.token,
       selectedImages,
     );
 

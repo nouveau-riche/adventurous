@@ -23,7 +23,7 @@ class AlreadyHaveAccountBtWidget extends StatelessWidget {
           onPressed: () => Get.back(),
           child: Text(
             constCtr.strings.login,
-            style: const TextStyle(color: greenColor1, fontSize: 15),
+            style: const TextStyle(color: oliveColor, fontSize: 15),
           ),
         ),
       ],

@@ -31,7 +31,7 @@ class RegisterScreen extends StatelessWidget {
                 Stack(
                   children: [
                     Image.asset(
-                      Assets.imagesRegister,
+                      Assets.imagesLogin,
                       width: Get.width,
                       height: Get.height * 0.42,
                     ),

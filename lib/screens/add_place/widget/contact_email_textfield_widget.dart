@@ -14,7 +14,7 @@ class ContactEmailTextFieldWidget extends StatelessWidget {
     final ctr = Get.put(AddPlaceController());
 
     return TextFormField(
-      cursorColor: greenColor2,
+      cursorColor: oliveColor,
       controller: ctr.emailCtr,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
@@ -27,7 +27,7 @@ class ContactEmailTextFieldWidget extends StatelessWidget {
           borderSide: BorderSide(color: greyColor5, width: 1.4),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: greenColor2, width: 1.4),
+          borderSide: BorderSide(color: oliveColor, width: 1.4),
         ),
         icon: const Icon(
           Icons.alternate_email_outlined,

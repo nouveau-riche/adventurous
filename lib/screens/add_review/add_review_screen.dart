@@ -25,7 +25,7 @@ class AddReviewScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: greenColor3,
+        backgroundColor: oliveColor,
         leading: const BackButtonWidget(color: Colors.white),
         title: Text(
           constCtr.strings.addReview,

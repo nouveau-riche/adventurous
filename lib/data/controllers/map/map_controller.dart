@@ -7,25 +7,17 @@ import 'package:adventurous_learner_app/utils/constants.dart';
 import 'package:adventurous_learner_app/utils/const_color.dart';
 import 'package:adventurous_learner_app/data/google_map/google_map_utils.dart';
 import 'package:adventurous_learner_app/screens/place_detail/place_detail_screen.dart';
-import 'package:adventurous_learner_app/data/modals/map/place_detail_response.dart';
 import 'package:adventurous_learner_app/data/modals/map/location_detail_response.dart';
 import 'package:adventurous_learner_app/data/controllers/map/location_detail_controller.dart';
 
 class MapController extends GetxController {
   GoogleMapController? mapController;
-  PlaceDetailResponse? currentLocationDetails;
 
   Set<Marker> mapMarker = {};
   Set<Circle> circlesSet = {};
 
-  String? get currentAddress =>
-      currentLocationDetails?.result?.formattedAddress;
-
-  double? get currentLatitude =>
-      currentLocationDetails?.result?.geometry?.location?.lat;
-
-  double? get currentLongitude =>
-      currentLocationDetails?.result?.geometry?.location?.lng;
+  double currentLatitude = defaultLatitude;
+  double currentLongitude = defaultLongitude;
 
   var currentCameraPos = const CameraPosition(
     target: LatLng(defaultLatitude, defaultLongitude),
@@ -36,11 +28,11 @@ class MapController extends GetxController {
   onInit() {
     super.onInit();
     WidgetsBinding.instance.addPostFrameCallback(
-      (_) => moveMarkerToCurrentLocation(),
+      (_) => _moveMarkerToCurrentLocation(),
     );
   }
 
-  moveMarkerToCurrentLocation() async {
+  _moveMarkerToCurrentLocation() async {
     await GoogleMapsUtils.askLocationPermission;
 
     if (await GoogleMapsUtils.isLocationDeniedForever) {
@@ -50,25 +42,24 @@ class MapController extends GetxController {
 
     final currentPosition = await GoogleMapsUtils.location.getLocation();
 
-    // _moveCameraToLocation(currentPosition.latitude, currentPosition.longitude);
-    _moveCameraToLocation(defaultLatitude, defaultLongitude);
+    currentLatitude = currentPosition.latitude ?? defaultLatitude;
+    currentLongitude = currentPosition.longitude ?? defaultLongitude;
 
-    addCircleToCurrentLocation();
+    _moveCameraToLocation();
+
+    _addCircleToCurrentLocation();
 
     Get.put(LocationDetailController()).fetchLocationDetails(
-      // currentPosition.latitude ?? defaultLatitude,
-      // currentPosition.longitude ?? defaultLongitude,
-      defaultLatitude,
-      defaultLongitude,
+      currentLatitude,
+      currentLongitude,
     );
   }
 
-  _moveCameraToLocation(double? latitude, double? longitude) {
-    if (latitude == null || longitude == null) return;
+  _moveCameraToLocation() {
     currentCameraPos = CameraPosition(
       target: LatLng(
-        latitude,
-        longitude,
+        currentLatitude,
+        currentLongitude,
       ),
       zoom: defaultMapZoomValue,
     );
@@ -84,13 +75,11 @@ class MapController extends GetxController {
     mapMarker.clear();
 
     mapMarker.add(Marker(
-      icon: BitmapDescriptor.defaultMarkerWithHue(88),
+      icon: BitmapDescriptor.defaultMarkerWithHue(80),
       markerId: MarkerId(DateTime.now().toString()),
-      position: const LatLng(
-        // currentPosition.latitude ?? defaultLatitude,
-        // currentPosition.longitude ?? defaultLongitude,
-        defaultLatitude,
-        defaultLongitude,
+      position: LatLng(
+        currentLatitude,
+        currentLongitude,
       ),
       infoWindow: const InfoWindow(title: 'You'),
     ));
@@ -120,19 +109,17 @@ class MapController extends GetxController {
     update();
   }
 
-  addCircleToCurrentLocation() {
+  _addCircleToCurrentLocation() {
     circlesSet.add(
       Circle(
         circleId: CircleId(DateTime.now().toString()),
-        fillColor: greenColor3.withOpacity(0.25),
-        center: const LatLng(
-          // currentPosition.latitude ?? defaultLatitude,
-          // currentPosition.longitude ?? defaultLongitude,
-          defaultLatitude,
-          defaultLongitude,
+        fillColor: oliveColor.withOpacity(0.25),
+        center: LatLng(
+          currentLatitude,
+          currentLongitude,
         ),
         radius: 120,
-        strokeColor: greenColor3,
+        strokeColor: oliveColor,
         strokeWidth: 2,
       ),
     );

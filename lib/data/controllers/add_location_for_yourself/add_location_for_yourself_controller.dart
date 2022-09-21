@@ -39,8 +39,6 @@ class AddLocationForYourself extends GetxController {
 
     _startLoading();
 
-    String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
-
     final response = await constCtr.apis.addLocationForYourself(
       type: 'YOURSELF',
       address: address,
@@ -52,7 +50,7 @@ class AddLocationForYourself extends GetxController {
       learningOpp: learningOpp,
       rating: ctr.rating.toInt(),
       text: review,
-      token: token,
+      token: constCtr.token,
       email: '',
       yourName: '',
       images: ctr.selectedImages,

@@ -8,7 +8,7 @@ import 'package:adventurous_learner_app/data/controllers/auth/reset_password_con
 
 class RegisterController extends GetxController {
   bool isLoading = false;
-  bool isPasswordVisible = false;
+  bool isPasswordVisible = true;
 
   String name = '';
   String email = '';

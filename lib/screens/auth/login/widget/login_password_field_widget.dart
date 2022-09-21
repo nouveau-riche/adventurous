@@ -17,7 +17,7 @@ class LoginPasswordFieldWidget extends StatelessWidget {
     return GetBuilder<LoginController>(
       builder: (_) {
         return TextFormField(
-          cursorColor: greenColor2,
+          cursorColor: oliveColor,
           obscureText: ctr.isPasswordVisible,
           decoration: InputDecoration(
             hintText: constCtr.strings.password,
@@ -26,7 +26,7 @@ class LoginPasswordFieldWidget extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
             focusedBorder: const UnderlineInputBorder(
-              borderSide: BorderSide(color: greenColor2),
+              borderSide: BorderSide(color: oliveColor),
             ),
             suffixIcon: IconButton(
               onPressed: () {
@@ -35,8 +35,8 @@ class LoginPasswordFieldWidget extends StatelessWidget {
               splashColor: Colors.transparent,
               icon: Icon(
                 ctr.isPasswordVisible
-                    ? Icons.visibility_outlined
-                    : Icons.visibility_off_outlined,
+                    ? Icons.visibility_off_outlined
+                    : Icons.visibility_outlined,
                 color: kTextFieldIconColor,
                 size: 20,
               ),

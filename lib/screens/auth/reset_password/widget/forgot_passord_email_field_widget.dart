@@ -14,7 +14,7 @@ class ForgotPasswordEmailFieldWidget extends StatelessWidget {
     final ctr = Get.put(ResetPasswordController());
 
     return TextFormField(
-      cursorColor: greenColor2,
+      cursorColor: oliveColor,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         hintText: constCtr.strings.email,
@@ -23,7 +23,7 @@ class ForgotPasswordEmailFieldWidget extends StatelessWidget {
           fontWeight: FontWeight.w500,
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: greenColor2),
+          borderSide: BorderSide(color: oliveColor),
         ),
         icon: const Icon(
           Icons.alternate_email_outlined,

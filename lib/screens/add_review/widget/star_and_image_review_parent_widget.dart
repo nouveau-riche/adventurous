@@ -46,7 +46,7 @@ class StarAndImageReviewParentWidget extends StatelessWidget {
               onPressed: () => ctr.addImage(),
               icon: const Icon(
                 Icons.add_circle_outline_outlined,
-                color: greenColor3,
+                color: oliveColor,
               ),
             ),
           ],

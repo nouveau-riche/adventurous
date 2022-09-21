@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "191455040984",
+    "project_id": "adventurous-learner",
+    "storage_bucket": "adventurous-learner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191455040984:android:b7ed11d1f81e3149798ead",
+        "android_client_info": {
+          "package_name": "com.adventurous_learner.adventurous_learner_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191455040984-dootopo4c8dd08hj52lmrsvjvfp2dj0v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcblVBREe05d4DXzuzOp79WkxEnrsbqvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191455040984-dootopo4c8dd08hj52lmrsvjvfp2dj0v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

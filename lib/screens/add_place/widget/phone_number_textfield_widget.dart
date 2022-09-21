@@ -15,7 +15,7 @@ class PhoneNumberTextFieldWidget extends StatelessWidget {
     final ctr = Get.put(AddPlaceController());
 
     return TextFormField(
-      cursorColor: greenColor2,
+      cursorColor: oliveColor,
       controller: ctr.phoneNumberCtr,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
@@ -28,7 +28,7 @@ class PhoneNumberTextFieldWidget extends StatelessWidget {
           borderSide: BorderSide(color: greyColor5, width: 1.4),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: greenColor2, width: 1.4),
+          borderSide: BorderSide(color: oliveColor, width: 1.4),
         ),
         icon: Image.asset(
           Assets.iconsPhone,

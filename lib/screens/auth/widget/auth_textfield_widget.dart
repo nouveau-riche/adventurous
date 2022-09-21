@@ -23,7 +23,7 @@ class AuthTextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      cursorColor: greenColor2,
+      cursorColor: oliveColor,
       controller: controller,
       obscureText: isPasswordVisible,
       decoration: InputDecoration(
@@ -33,7 +33,7 @@ class AuthTextFieldWidget extends StatelessWidget {
           fontWeight: FontWeight.w500,
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: greenColor2),
+          borderSide: BorderSide(color: oliveColor),
         ),
         suffixIcon: isPasswordField
             ? IconButton(

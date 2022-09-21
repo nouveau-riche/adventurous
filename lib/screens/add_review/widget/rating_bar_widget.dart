@@ -17,19 +17,19 @@ class RatingIndicatorWidget extends StatelessWidget {
         return Align(
           alignment: Alignment.centerLeft,
           child: RatingBar.builder(
-            unratedColor: greenColor3,
+            unratedColor: oliveColor,
             initialRating: 0,
             itemBuilder: (_, index) {
               if (index < ctr.rating) {
                 return const Icon(
                   Icons.star,
-                  color: greenColor3,
+                  color: oliveColor,
                 );
               }
 
               return const Icon(
                 Icons.star_border,
-                color: greenColor3,
+                color: oliveColor,
               );
             },
             itemCount: 5,

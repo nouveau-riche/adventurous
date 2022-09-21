@@ -25,7 +25,7 @@ class DrawerTileWidget extends StatelessWidget {
       leading: Image.asset(
         image,
         height: 20,
-        color: greenColor3,
+        color: oliveColor,
       ),
       title: Text(
         text,

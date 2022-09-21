@@ -15,7 +15,7 @@ class EditNameTextFieldWidget extends StatelessWidget {
     final ctr = Get.put(EditNameAndBioController());
 
     return TextFormField(
-      cursorColor: greenColor2,
+      cursorColor: oliveColor,
       decoration: InputDecoration(
         hintText: constCtr.strings.newName,
         hintStyle: const TextStyle(
@@ -26,7 +26,7 @@ class EditNameTextFieldWidget extends StatelessWidget {
           borderSide: BorderSide(color: greyColor5, width: 1.4),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: greenColor2, width: 1.4),
+          borderSide: BorderSide(color: oliveColor, width: 1.4),
         ),
         icon: Image.asset(
           Assets.iconsProfile,

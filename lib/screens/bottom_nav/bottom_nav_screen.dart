@@ -28,16 +28,16 @@ class BottomNavScreen extends StatelessWidget {
             showSelectedLabels: true,
             showUnselectedLabels: true,
             backgroundColor: Colors.white,
-            selectedItemColor: greenColor3,
-            unselectedItemColor: greenColor3,
+            selectedItemColor: oliveColor,
+            unselectedItemColor: oliveColor,
             selectedLabelStyle: const TextStyle(
               fontSize: 12,
-              color: greenColor3,
+              color: oliveColor,
               fontWeight: FontWeight.w600,
             ),
             unselectedLabelStyle: const TextStyle(
               fontSize: 12,
-              color: greenColor3,
+              color: oliveColor,
               fontWeight: FontWeight.w600,
             ),
             items: [
@@ -48,6 +48,7 @@ class BottomNavScreen extends StatelessWidget {
                       ? Assets.iconsHomeFilled
                       : Assets.iconsHome,
                   height: 20,
+                  color: oliveColor,
                 ),
                 label: 'Home',
               ),
@@ -58,6 +59,7 @@ class BottomNavScreen extends StatelessWidget {
                       ? Assets.iconsMapFilled
                       : Assets.iconsMap,
                   height: 20,
+                  color: oliveColor,
                 ),
                 label: 'Map',
               ),
@@ -68,6 +70,7 @@ class BottomNavScreen extends StatelessWidget {
                       ? Assets.iconsAddPlaceFilled
                       : Assets.iconsAddPlace,
                   height: 20,
+                  color: oliveColor,
                 ),
                 label: 'Add Place',
               ),
@@ -78,6 +81,7 @@ class BottomNavScreen extends StatelessWidget {
                       ? Assets.iconsProfileFilled
                       : Assets.iconsProfile,
                   height: 20,
+                  color: oliveColor,
                 ),
                 label: 'Profile',
               ),

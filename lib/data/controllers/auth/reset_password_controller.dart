@@ -1,17 +1,21 @@
+import 'dart:io';
+
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 import 'package:adventurous_learner_app/utils/common.dart';
 import 'package:adventurous_learner_app/utils/constants.dart';
 import 'package:adventurous_learner_app/screens/auth/login/login_screen.dart';
+import 'package:adventurous_learner_app/data/controllers/constant_controller.dart';
 import 'package:adventurous_learner_app/data/controllers/auth/register_controller.dart';
 import 'package:adventurous_learner_app/screens/bottom_nav/bottom_nav_screen.dart';
 import 'package:adventurous_learner_app/screens/auth/reset_password/otp_screen.dart';
 import 'package:adventurous_learner_app/screens/auth/reset_password/reset_password_screen.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 class ResetPasswordController extends GetxController {
   bool isLoading = false;
-  bool isPasswordVisible = false;
+  bool isPasswordVisible = true;
 
   String email = '';
   final pinCtr = TextEditingController();
@@ -43,10 +47,8 @@ class ResetPasswordController extends GetxController {
     if (isResetEmail) {
       _startLoading();
 
-      String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
-
       final response = await constCtr.apis.updateEmail(
-        token: token,
+        token: constCtr.token,
         email: email,
         otp: enteredOtp,
       );
@@ -72,10 +74,14 @@ class ResetPasswordController extends GetxController {
 
       _startLoading();
 
+      final status = await OneSignal.shared.getDeviceState();
+
       final response = await constCtr.apis.registerUser(
         ctr.email,
         ctr.name,
         ctr.password,
+        status?.userId ?? '',
+        Platform.isAndroid ? 'ANDROID' : 'IOS',
       );
 
       _stopLoading();
@@ -83,6 +89,7 @@ class ResetPasswordController extends GetxController {
       if (response == null) return;
 
       constCtr.prefRepo.setUserXAccessToken(response.xaccesstoken);
+      Get.put(ConstantController()).updateToken(response.xaccesstoken ?? '');
 
       Get.offAll(
         () => const BottomNavScreen(),

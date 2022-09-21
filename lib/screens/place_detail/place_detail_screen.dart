@@ -25,7 +25,7 @@ class PlaceDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: greenColor3,
+        backgroundColor: oliveColor,
         leading: const BackButtonWidget(color: Colors.white),
         title: Text(
           location?.name ?? '',
@@ -98,7 +98,7 @@ class PlaceDetailScreen extends StatelessWidget {
                     width: 100,
                     radius: 32,
                     elevation: 0,
-                    color: greenColor3,
+                    color: oliveColor,
                     text: Text(constCtr.strings.direction),
                     onPressed: () {
                       openURL(
@@ -111,7 +111,7 @@ class PlaceDetailScreen extends StatelessWidget {
                     width: 100,
                     radius: 32,
                     elevation: 0,
-                    color: greenColor3,
+                    color: oliveColor,
                     text: Text(constCtr.strings.contact),
                     onPressed: () {
                       openURL(
@@ -124,7 +124,7 @@ class PlaceDetailScreen extends StatelessWidget {
                     width: 100,
                     radius: 32,
                     elevation: 0,
-                    color: greenColor3,
+                    color: oliveColor,
                     text: Text(constCtr.strings.website),
                     onPressed: () {
                       openURL(location?.websiteLink ?? '');

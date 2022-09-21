@@ -1,9 +1,6 @@
 import 'dart:io';
 import 'dart:convert';
 
-import 'package:adventurous_learner_app/data/modals/add_visited_location/search_location_response.dart';
-import 'package:adventurous_learner_app/data/modals/profile/user_detail_response.dart';
-import 'package:adventurous_learner_app/data/modals/profile/visited_location_response.dart';
 import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
 
@@ -16,6 +13,12 @@ import 'package:adventurous_learner_app/data/modals/auth/login_user_response.dar
 import 'package:adventurous_learner_app/data/modals/auth/register_user_response.dart';
 import 'package:adventurous_learner_app/data/modals/map/location_detail_response.dart';
 import 'package:adventurous_learner_app/data/modals/auth/forgot_password_response.dart';
+import 'package:adventurous_learner_app/data/modals/add_visited_location/search_location_response.dart';
+import 'package:adventurous_learner_app/data/modals/contact_us/contact_us_response.dart';
+import 'package:adventurous_learner_app/data/modals/learning_module/learning_module_response.dart';
+import 'package:adventurous_learner_app/data/modals/notification/notification_response.dart';
+import 'package:adventurous_learner_app/data/modals/profile/user_detail_response.dart';
+import 'package:adventurous_learner_app/data/modals/profile/visited_location_response.dart';
 import 'package:adventurous_learner_app/data/modals/auth/check_email_register_response.dart';
 
 class Apis {
@@ -54,6 +57,8 @@ class Apis {
     String email,
     String name,
     String password,
+    String playerId,
+    String deviceOs,
   ) async {
     final request = utils.createPostRequest(constant.registerUserUrl);
 
@@ -61,6 +66,8 @@ class Apis {
       constant.paramUserEmail: email,
       constant.paramName: name,
       constant.paramPassword: password,
+      constant.paramPlayerId: playerId,
+      constant.paramDeviceOs: deviceOs,
     };
 
     utils.addBodyToRequest(request, body);
@@ -86,12 +93,19 @@ class Apis {
     }
   }
 
-  Future<LoginUserResponse?> loginUser(String email, String password) async {
+  Future<LoginUserResponse?> loginUser(
+    String email,
+    String password,
+    String playerId,
+    String deviceOs,
+  ) async {
     final request = utils.createPostRequest(constant.loginUserUrl);
 
     Map<String, dynamic> body = {
       constant.paramUserEmail: email,
       constant.paramPassword: password,
+      constant.paramPlayerId: playerId,
+      constant.paramDeviceOs: deviceOs,
     };
 
     utils.addBodyToRequest(request, body);
@@ -399,15 +413,17 @@ class Apis {
 
     Map<String, dynamic> body = {
       constant.paramAddress: address,
-      constant.paramName: name,
+      constant.paramName: locationName,
       constant.paramContactNo: contactNo,
       constant.paramCountryCode: countryCode,
       constant.paramWebsite: websiteLink,
       constant.paramDescription: description,
       constant.paramLearningOpportunity: learningOpportunity,
+      constant.paramCreatedByName: name,
+      constant.paramCreatedBy: email,
       constant.paramLocation: {
         "type": "Point",
-        "coordinates": [76.347904, 26.917148],
+        "coordinates": [1.0, 1.0],
       },
     };
 
@@ -729,6 +745,108 @@ class Apis {
       printLog(e.toString());
       showSnackBar('Check you internet', isError: true);
       return false;
+    }
+  }
+
+  Future<ContactUsResponse?> getContactDetails({
+    required String token,
+  }) async {
+    final request = utils.createPostRequest(constant.getContactDetailsUrl);
+
+    request.headers.clear();
+
+    request.headers.addAll({
+      'Content-Type': 'application/json',
+      'x-access-token': token,
+    });
+
+    http.StreamedResponse response = await request.send();
+
+    try {
+      if (response.statusCode == 200) {
+        final data = await response.stream.bytesToString();
+        printLog(data);
+        return ContactUsResponse.fromJson(jsonDecode(data));
+      } else {
+        printLog(response.reasonPhrase);
+        final data = await response.stream.bytesToString();
+        showSnackBar(
+          BaseResponse.fromJson(jsonDecode(data)).description ?? '',
+          isError: true,
+        );
+        return null;
+      }
+    } catch (e) {
+      printLog(e);
+      return null;
+    }
+  }
+
+  Future<LearningModuleResponse?> getLearningModules({
+    required String token,
+  }) async {
+    final request = utils.createPostRequest(constant.getLearningModuleUrl);
+
+    request.headers.clear();
+
+    request.headers.addAll({
+      'Content-Type': 'application/json',
+      'x-access-token': token,
+    });
+
+    http.StreamedResponse response = await request.send();
+
+    try {
+      if (response.statusCode == 200) {
+        final data = await response.stream.bytesToString();
+        printLog(data);
+        return LearningModuleResponse.fromJson(jsonDecode(data));
+      } else {
+        printLog(response.reasonPhrase);
+        final data = await response.stream.bytesToString();
+        showSnackBar(
+          BaseResponse.fromJson(jsonDecode(data)).description ?? '',
+          isError: true,
+        );
+        return null;
+      }
+    } catch (e) {
+      printLog(e);
+      return null;
+    }
+  }
+
+  Future<NotificationResponse?> getNotifications({
+    required String token,
+  }) async {
+    final request = utils.createPostRequest(constant.getNotificationUrl);
+
+    request.headers.clear();
+
+    request.headers.addAll({
+      'Content-Type': 'application/json',
+      'x-access-token': token,
+    });
+
+    http.StreamedResponse response = await request.send();
+
+    try {
+      if (response.statusCode == 200) {
+        final data = await response.stream.bytesToString();
+        printLog(data);
+        return NotificationResponse.fromJson(jsonDecode(data));
+      } else {
+        printLog(response.reasonPhrase);
+        final data = await response.stream.bytesToString();
+        showSnackBar(
+          BaseResponse.fromJson(jsonDecode(data)).description ?? '',
+          isError: true,
+        );
+        return null;
+      }
+    } catch (e) {
+      printLog(e);
+      return null;
     }
   }
 }

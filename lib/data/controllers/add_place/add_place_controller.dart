@@ -39,8 +39,6 @@ class AddPlaceController extends GetxController {
 
     _startLoading();
 
-    String token = await constCtr.prefRepo.getUserXAccessToken() ?? '';
-
     if (isNotTabScreen) {
       final response = await constCtr.apis.addLocationForYourself(
         type: 'EVERYONE',
@@ -55,7 +53,7 @@ class AddPlaceController extends GetxController {
         text: '',
         yourName: name,
         email: email,
-        token: token,
+        token: constCtr.token,
         images: [],
       );
 
@@ -78,7 +76,7 @@ class AddPlaceController extends GetxController {
     }
 
     final response = await constCtr.apis.addPlace(
-      token: token,
+      token: constCtr.token,
       locationName: locationName,
       address: address,
       learningOpportunity: learningOpp,

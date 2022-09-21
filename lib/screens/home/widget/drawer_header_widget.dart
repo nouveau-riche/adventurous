@@ -16,7 +16,7 @@ class DrawerHeaderWidget extends StatelessWidget {
       builder: (_) {
         return Container(
           height: 130,
-          color: greenColor3,
+          color: oliveColor,
           child: Padding(
             padding: const EdgeInsets.only(top: 20),
             child: Row(

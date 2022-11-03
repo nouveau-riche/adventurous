@@ -40,7 +40,7 @@ class YourselfPhoneNumberFieldWidget extends StatelessWidget {
         if (value.isNullOrEmpty) {
           return 'Enter Location Contact Number';
         }
-        if (value?.length != 10) {
+        if ((value?.length ?? 0) < 7) {
           return 'Enter Valid Contact Number';
         }
       },

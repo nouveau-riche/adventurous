@@ -49,7 +49,7 @@ class PlaceDetailVerticalWidget extends StatelessWidget {
               Expanded(
                 child: CachedNetworkImage(
                   imageUrl: ((location?.attachment ?? []).isNotEmpty)
-                      ? ('https://adventurelearner.herokuapp.com/api/v1/app/read-file${location?.attachment?[0].filePath}')
+                      ? ('http://68.178.202.229:3000/api/v1/app/read-file${location?.attachment?[0].filePath}')
                       : '',
                   height: 252,
                   width: 176,

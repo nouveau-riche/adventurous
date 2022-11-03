@@ -18,7 +18,7 @@ class AddressTextFieldWidget extends StatelessWidget {
       cursorColor: oliveColor,
       controller: ctr.addressCtr,
       decoration: InputDecoration(
-        hintText: constCtr.strings.address,
+        hintText: constCtr.strings.locationAddress,
         hintStyle: const TextStyle(
           color: kHintTextColor,
           fontWeight: FontWeight.w500,

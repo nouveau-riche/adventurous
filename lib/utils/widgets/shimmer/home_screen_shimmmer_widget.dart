@@ -7,31 +7,34 @@ class HomeScreenShimmerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        ShimmerWidget(height: 14, width: 100, radius: 4),
-        SizedBox(height: 16),
-        ShimmerWidget(height: 10, width: 340, radius: 4),
-        SizedBox(height: 4),
-        ShimmerWidget(height: 10, width: 310, radius: 4),
-        SizedBox(height: 4),
-        ShimmerWidget(height: 10, width: 330, radius: 4),
-        SizedBox(height: 4),
-        ShimmerWidget(height: 10, width: 330, radius: 4),
-        SizedBox(height: 4),
-        ShimmerWidget(height: 10, width: 300, radius: 4),
-        SizedBox(height: 20),
-        ShimmerWidget(height: 10, width: 340, radius: 4),
-        SizedBox(height: 4),
-        ShimmerWidget(height: 10, width: 310, radius: 4),
-        SizedBox(height: 4),
-        ShimmerWidget(height: 10, width: 330, radius: 4),
-        SizedBox(height: 4),
-        ShimmerWidget(height: 10, width: 330, radius: 4),
-        SizedBox(height: 4),
-        ShimmerWidget(height: 10, width: 300, radius: 4),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          ShimmerWidget(height: 14, width: 100, radius: 4),
+          SizedBox(height: 16),
+          ShimmerWidget(height: 10, width: 340, radius: 4),
+          SizedBox(height: 4),
+          ShimmerWidget(height: 10, width: 310, radius: 4),
+          SizedBox(height: 4),
+          ShimmerWidget(height: 10, width: 330, radius: 4),
+          SizedBox(height: 4),
+          ShimmerWidget(height: 10, width: 330, radius: 4),
+          SizedBox(height: 4),
+          ShimmerWidget(height: 10, width: 300, radius: 4),
+          SizedBox(height: 20),
+          ShimmerWidget(height: 10, width: 340, radius: 4),
+          SizedBox(height: 4),
+          ShimmerWidget(height: 10, width: 310, radius: 4),
+          SizedBox(height: 4),
+          ShimmerWidget(height: 10, width: 330, radius: 4),
+          SizedBox(height: 4),
+          ShimmerWidget(height: 10, width: 330, radius: 4),
+          SizedBox(height: 4),
+          ShimmerWidget(height: 10, width: 300, radius: 4),
+        ],
+      ),
     );
   }
 }

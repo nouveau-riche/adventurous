@@ -72,7 +72,7 @@ class BottomNavScreen extends StatelessWidget {
                   height: 20,
                   color: oliveColor,
                 ),
-                label: 'Add Place',
+                label: 'Add Location',
               ),
               BottomNavigationBarItem(
                 tooltip: '',

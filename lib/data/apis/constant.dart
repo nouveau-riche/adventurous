@@ -5,7 +5,10 @@ class ApiConstants {
     "Content-Type": "application/x-www-form-urlencoded",
   };
 
-  final baseUrl = "https://adventurelearner.herokuapp.com/api/v1/";
+  final baseUrl = "http://68.178.202.229:3000/api/v1/";
+
+  // final baseUrl = "https://adventurelearner.herokuapp.com/api/v1/";
+
   final googleMapsBaseUrl = 'https://maps.googleapis.com/maps/api/';
 
   String get checkEmailRegisterUrl => '${baseUrl}app/user-email-register';

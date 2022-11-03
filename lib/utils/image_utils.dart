@@ -17,7 +17,7 @@ Widget getImageBuilder(
   if (url == null || url.isEmpty) return placeHolderToShow;
 
   return CachedNetworkImage(
-    imageUrl: 'https://adventurelearner.herokuapp.com/api/v1/app/read-file$url',
+    imageUrl: 'http://68.178.202.229:3000/api/v1/app/read-file$url',
     height: height,
     width: width,
     httpHeaders: {
@@ -62,7 +62,7 @@ Widget circularProfileImage(String url, double radius) {
     backgroundColor: greyColor5,
     radius: radius,
     backgroundImage: NetworkImage(
-      'https://adventurelearner.herokuapp.com/api/v1/app/read-file$url',
+      'http://68.178.202.229:3000/api/v1/app/read-file$url',
       headers: {'x-access-token': constCtr.token},
     ),
   );

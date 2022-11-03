@@ -68,9 +68,8 @@ class AddPlaceController extends GetxController {
             Get.back();
           },
         );
+        clearFields();
       }
-
-      clearFields();
 
       return;
     }
@@ -97,9 +96,8 @@ class AddPlaceController extends GetxController {
           Get.back();
         },
       );
+      clearFields();
     }
-
-    clearFields();
   }
 
   clearFields() {

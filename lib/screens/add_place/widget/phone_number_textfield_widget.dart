@@ -41,7 +41,7 @@ class PhoneNumberTextFieldWidget extends StatelessWidget {
         if (value.isNullOrEmpty) {
           return 'Enter Phone Number';
         }
-        if(value?.length != 10){
+        if((value?.length ?? 0) < 7){
           return 'Enter valid phone number';
         }
       },

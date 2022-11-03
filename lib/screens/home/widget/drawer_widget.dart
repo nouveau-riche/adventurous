@@ -51,7 +51,7 @@ class DrawerWidget extends StatelessWidget {
         ),
         DrawerTileWidget(
           image: Assets.iconsAddPlace,
-          text: 'Add Place',
+          text: 'Add Location',
           onPressed: () {
             Get.back();
             Get.put(BottomNavController()).selectPage(2);

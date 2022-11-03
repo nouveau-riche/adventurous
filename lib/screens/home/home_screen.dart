@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 import 'package:adventurous_learner_app/generated/assets.dart';
 import 'package:adventurous_learner_app/utils/const_color.dart';
@@ -29,26 +30,26 @@ class HomeScreen extends StatelessWidget {
       ),
       drawer: const Drawer(child: DrawerWidget()),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: SingleChildScrollView(
-            child: GetBuilder<HomeController>(
-              builder: (_) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 20),
-                    Center(
-                      child: Image.asset(
-                        Assets.logoAppIcon,
-                        height: 122,
-                      ),
+        child: SingleChildScrollView(
+          child: GetBuilder<HomeController>(
+            builder: (_) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 20),
+                  Center(
+                    child: Image.asset(
+                      Assets.logoAppIcon,
+                      height: 122,
                     ),
-                    const SizedBox(height: 30),
-                    if (ctr.isLoading)
-                      const HomeScreenShimmerWidget()
-                    else ...[
-                      Row(
+                  ),
+                  const SizedBox(height: 30),
+                  if (ctr.isLoading)
+                    const HomeScreenShimmerWidget()
+                  else ...[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Row(
                         children: [
                           const Text(
                             'Hi! ',
@@ -69,13 +70,25 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 16),
-                      Text(ctr.homeScreenContent?.description ?? ''),
-                    ],
+                    ),
+                    const SizedBox(height: 10),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Html(
+                        data: ctr.homeScreenContent?.description ?? '',
+                        style: {
+                          "body": Style(
+                            margin: EdgeInsets.zero,
+                            padding: EdgeInsets.zero,
+                          ),
+                          "html": Style(textAlign: TextAlign.justify),
+                        },
+                      ),
+                    ),
                   ],
-                );
-              },
-            ),
+                ],
+              );
+            },
           ),
         ),
       ),

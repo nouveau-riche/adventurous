@@ -78,6 +78,9 @@ dependencies:
   # share app
   share_plus: ^4.2.0
 
+  # html reader
+  flutter_html: ^2.2.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

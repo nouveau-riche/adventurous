@@ -46,7 +46,7 @@ class ConstString {
   final locationBio = 'Location Bio';
   final locationAddress = 'Location Address';
   final address = 'Address';
-  final phoneNumber = 'Phone Number';
+  final phoneNumber = 'Location Phone Number';
   final locationContactNumber = 'Location Contact number';
   final yourName = 'Your Name';
   final yourContactEmail = 'Your contact email';

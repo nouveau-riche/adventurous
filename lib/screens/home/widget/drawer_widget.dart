@@ -18,104 +18,106 @@ class DrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const DrawerHeaderWidget(),
-        const SizedBox(height: 20),
-        DrawerTileWidget(
-          image: Assets.iconsProfile,
-          text: 'Profile',
-          onPressed: () {
-            Get.back();
-            Get.put(BottomNavController()).selectPage(3);
-          },
-        ),
-        DrawerTileWidget(
-          image: Assets.iconsBell,
-          text: 'Notification',
-          onPressed: () {
-            Get.back();
-            Get.to(
-              () => const NotificationScreen(),
-              transition: Transition.rightToLeft,
-            );
-          },
-        ),
-        DrawerTileWidget(
-          image: Assets.iconsMap,
-          text: 'View Map',
-          onPressed: () {
-            Get.back();
-            Get.put(BottomNavController()).selectPage(1);
-          },
-        ),
-        DrawerTileWidget(
-          image: Assets.iconsAddPlace,
-          text: 'Add Location',
-          onPressed: () {
-            Get.back();
-            Get.put(BottomNavController()).selectPage(2);
-          },
-        ),
-        DrawerTileWidget(
-          image: Assets.iconsLearning,
-          text: 'Learning Modules',
-          onPressed: () {
-            Get.back();
-            Get.to(
-              () => const LearningModulesScreen(),
-              transition: Transition.rightToLeft,
-            );
-          },
-        ),
-        DrawerTileWidget(
-          image: Assets.iconsContact,
-          text: 'Contact Us',
-          onPressed: () {
-            Get.back();
-            Get.to(
-              () => const ContactUsScreen(),
-              transition: Transition.rightToLeft,
-            );
-          },
-        ),
-        DrawerTileWidget(
-          image: Assets.iconsAbout,
-          text: 'About Us',
-          onPressed: () {
-            Get.back();
-            Get.to(
-              () => const AboutUsScreen(),
-              transition: Transition.rightToLeft,
-            );
-          },
-        ),
-        DrawerTileWidget(
-          image: Assets.iconsPrivacy,
-          text: 'Privacy Policy',
-          onPressed: () {
-            Get.back();
-            Get.to(
-              () => const PrivacyPolicyScreen(),
-              transition: Transition.rightToLeft,
-            );
-          },
-        ),
-        DrawerTileWidget(
-          image: Assets.iconsShare,
-          text: 'Share The App',
-          onPressed: () {
-            Share.share('check out adventurous app on playstore');
-          },
-        ),
-        DrawerTileWidget(
-          image: Assets.iconsLogout,
-          text: 'Logout',
-          onPressed: () {
-            Get.put(LogoutController()).logoutUser();
-          },
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const DrawerHeaderWidget(),
+          const SizedBox(height: 20),
+          DrawerTileWidget(
+            image: Assets.iconsProfile,
+            text: 'Profile',
+            onPressed: () {
+              Get.back();
+              Get.put(BottomNavController()).selectPage(3);
+            },
+          ),
+          DrawerTileWidget(
+            image: Assets.iconsBell,
+            text: 'Notification',
+            onPressed: () {
+              Get.back();
+              Get.to(
+                () => const NotificationScreen(),
+                transition: Transition.rightToLeft,
+              );
+            },
+          ),
+          DrawerTileWidget(
+            image: Assets.iconsMap,
+            text: 'View Map',
+            onPressed: () {
+              Get.back();
+              Get.put(BottomNavController()).selectPage(1);
+            },
+          ),
+          DrawerTileWidget(
+            image: Assets.iconsAddPlace,
+            text: 'Add Location',
+            onPressed: () {
+              Get.back();
+              Get.put(BottomNavController()).selectPage(2);
+            },
+          ),
+          DrawerTileWidget(
+            image: Assets.iconsLearning,
+            text: 'Learning Modules',
+            onPressed: () {
+              Get.back();
+              Get.to(
+                () => const LearningModulesScreen(),
+                transition: Transition.rightToLeft,
+              );
+            },
+          ),
+          DrawerTileWidget(
+            image: Assets.iconsContact,
+            text: 'Contact Us',
+            onPressed: () {
+              Get.back();
+              Get.to(
+                () => const ContactUsScreen(),
+                transition: Transition.rightToLeft,
+              );
+            },
+          ),
+          DrawerTileWidget(
+            image: Assets.iconsAbout,
+            text: 'About Us',
+            onPressed: () {
+              Get.back();
+              Get.to(
+                () => const AboutUsScreen(),
+                transition: Transition.rightToLeft,
+              );
+            },
+          ),
+          DrawerTileWidget(
+            image: Assets.iconsPrivacy,
+            text: 'Privacy Policy',
+            onPressed: () {
+              Get.back();
+              Get.to(
+                () => const PrivacyPolicyScreen(),
+                transition: Transition.rightToLeft,
+              );
+            },
+          ),
+          DrawerTileWidget(
+            image: Assets.iconsShare,
+            text: 'Share The App',
+            onPressed: () {
+              Share.share('check out adventurous app on playstore');
+            },
+          ),
+          DrawerTileWidget(
+            image: Assets.iconsLogout,
+            text: 'Logout',
+            onPressed: () {
+              Get.put(LogoutController()).logoutUser();
+            },
+          ),
+        ],
+      ),
     );
   }
 }

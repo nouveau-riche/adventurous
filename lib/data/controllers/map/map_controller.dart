@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:location/location.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'package:adventurous_learner_app/utils/common.dart';
@@ -40,10 +41,14 @@ class MapController extends GetxController {
       return;
     }
 
-    final currentPosition = await GoogleMapsUtils.location.getLocation();
+    LocationData? currentPosition;
 
-    currentLatitude = currentPosition.latitude ?? defaultLatitude;
-    currentLongitude = currentPosition.longitude ?? defaultLongitude;
+    if (!await GoogleMapsUtils.isLocationDenied) {
+      currentPosition = await GoogleMapsUtils.location.getLocation();
+    }
+
+    currentLatitude = currentPosition?.latitude ?? defaultLatitude;
+    currentLongitude = currentPosition?.longitude ?? defaultLongitude;
 
     _moveCameraToLocation();
 

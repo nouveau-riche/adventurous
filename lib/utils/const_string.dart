@@ -38,7 +38,7 @@ class ConstString {
   final contact = 'Contact';
   final website = 'Website';
   final allowLocation =
-      'Please allow location permission from app setting to fetch your location.';
+      'Please allow location permission from app\nsetting to fetch your location.';
 
   final learningOpportunity = 'Learning Opportunity';
 

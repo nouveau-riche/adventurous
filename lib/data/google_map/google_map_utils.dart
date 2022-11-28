@@ -29,4 +29,10 @@ class GoogleMapsUtils {
     PermissionStatus permissionGranted = await location.hasPermission();
     return permissionGranted == PermissionStatus.deniedForever;
   }
+
+  static Future<bool> get isLocationDenied async {
+    PermissionStatus permissionGranted = await location.hasPermission();
+    return permissionGranted == PermissionStatus.denied;
+  }
+
 }

@@ -3,7 +3,7 @@ description: The Adventurous Learner App
 
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.0.0+6
 
 environment:
   sdk: ">=2.17.6 <3.0.0"
@@ -89,8 +89,9 @@ dev_dependencies:
   flutter_launcher_icons: "^0.9.2"
 
 flutter_icons:
-  image_path: "assets/logo/app_icon.png"
-  android: true
+  image_path_android: "assets/logo/app_icon.png"
+  image_path_ios: "assets/logo/app_icon_ios.png"
+  android: false
   ios: true
   adaptive_icon_background: "#ffffff"
 
@@ -113,5 +114,5 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/logo/
-    #     - assets/gif/
+
 

@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
-import 'package:google_fonts/google_fonts.dart';
 import 'package:adventurous_learner_app/utils/common.dart';
 import 'package:adventurous_learner_app/utils/constants.dart';
 import 'package:adventurous_learner_app/screens/splash/splash_screen.dart';

@@ -2,12 +2,12 @@ import 'dart:io';
 
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 import 'package:adventurous_learner_app/utils/common.dart';
 import 'package:adventurous_learner_app/utils/constants.dart';
 import 'package:adventurous_learner_app/data/controllers/constant_controller.dart';
 import 'package:adventurous_learner_app/screens/bottom_nav/bottom_nav_screen.dart';
-import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 class LoginController extends GetxController {
   bool isLoading = false;

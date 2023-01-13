@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:adventurous_learner_app/utils/const_color.dart';
 import 'package:adventurous_learner_app/utils/widgets/back_button_widget.dart';
+import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 
 class PrivacyPolicyScreen extends StatelessWidget {
   const PrivacyPolicyScreen({Key? key}) : super(key: key);
@@ -19,14 +20,10 @@ class PrivacyPolicyScreen extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
       ),
-      body: const SingleChildScrollView(
-        physics:  BouncingScrollPhysics(),
-        child: Padding(
-          padding:  EdgeInsets.fromLTRB(16, 16, 16, 0),
-          child: Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id lobortis enim, sit ullamcorper viverra. Integer euismod magna nec, varius pretium morbi. NuncLorem ipsum dolor sit amet, consectetur adipiscing elit. Id lobortis enim, sit ullamcorper viverra. Integer euismod magna nec, varius pretium morbi. Nunc \n \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Id lobortis enim, sit ullamcorper viverra. Integer euismod magna nec, varius pretium morbi. NuncLorem ipsum dolor sit amet, consectetur adipiscing elit. Id lobortis enim, sit ullamcorper viverra. Integer euismod magna nec, varius pretium morbi. Nunc  ',
-          ),
-        ),
+      body: const PDF().fromAsset(
+        'assets/doc/privacy_policy.pdf',
+        loadingWidget: () => const Center(child: CircularProgressIndicator()),
+        errorWidget: (error) => Center(child: Text(error.toString())),
       ),
     );
   }

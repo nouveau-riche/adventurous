@@ -28,10 +28,17 @@ class NameAndBioScreen extends StatelessWidget {
               children: [
                 Stack(
                   children: [
-                    Image.asset(
-                      Assets.imagesLogin,
-                      width: Get.width,
-                      height: Get.height * 0.42,
+                    ClipRRect(
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
+                      ),
+                      child: Image.asset(
+                        Assets.imagesLogin,
+                        width: Get.width,
+                        height: Get.height * 0.41,
+                        fit: BoxFit.fill,
+                      ),
                     ),
                     const Positioned(
                       top: 10,
@@ -39,6 +46,7 @@ class NameAndBioScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: Get.height * 0.01),
                 Text(
                   constCtr.strings.changeNameOrBio,
                   style: const TextStyle(

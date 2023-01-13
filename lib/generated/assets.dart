@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String docPrivacyPolicy = 'assets/doc/privacy_policy.pdf';
   static const String iconsAbout = 'assets/icons/about.webp';
   static const String iconsAddPlace = 'assets/icons/add_place.webp';
   static const String iconsAddPlaceFilled = 'assets/icons/add_place_filled.webp';
@@ -34,6 +35,7 @@ class Assets {
   static const String imagesPlaceholder = 'assets/images/placeholder.webp';
   static const String imagesVisitedLocation = 'assets/images/visited_location.webp';
   static const String logoAppIcon = 'assets/logo/app_icon.png';
+  static const String logoAppIconIos = 'assets/logo/app_icon_ios.png';
   static const String logoSplash = 'assets/logo/splash.png';
 
 }

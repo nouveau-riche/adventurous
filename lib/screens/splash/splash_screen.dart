@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
@@ -22,11 +24,26 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Image.asset(
-          Assets.imagesLogo,
-          height: 280,
-          width: 280,
-        ),
+        child: Platform.isAndroid
+            ? Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SizedBox(height: 24),
+                  Image.asset(
+                    Assets.imagesLogo,
+                    height: 93,
+                    width: 87,
+                    fit: BoxFit.fill,
+                  ),
+                ],
+              )
+            : Center(
+                child: Image.asset(
+                  Assets.imagesLogo,
+                  height: 160,
+                  width: 160,
+                ),
+              ),
       ),
     );
   }

@@ -19,80 +19,82 @@ class SearchLocationWidget extends StatelessWidget {
       top: 0,
       left: 0,
       right: 0,
-      child: Container(
-        color: Colors.white,
-        padding: const EdgeInsets.all(24),
-        child: SizedBox(
-          height: 38,
-          child: TypeAheadField(
-            textFieldConfiguration: TextFieldConfiguration(
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.fromLTRB(14, 0, 8, 0),
-                hintText: 'Search Here...',
-                hintStyle: const TextStyle(
-                  color: kSecondaryTextColor,
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: greyColor3,
-                    width: 0.7,
+      child: SingleChildScrollView(
+        child: Container(
+          color: Colors.white,
+          padding: const EdgeInsets.all(24),
+          child: SizedBox(
+            height: 38,
+            child: TypeAheadField(
+              textFieldConfiguration: TextFieldConfiguration(
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.fromLTRB(14, 0, 8, 0),
+                  hintText: 'Search Here...',
+                  hintStyle: const TextStyle(
+                    color: kSecondaryTextColor,
                   ),
-                  borderRadius: BorderRadius.circular(22),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: greyColor3,
-                    width: 0.7,
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: greyColor3,
+                      width: 0.7,
+                    ),
+                    borderRadius: BorderRadius.circular(22),
                   ),
-                  borderRadius: BorderRadius.circular(22),
-                ),
-                suffixIcon: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Image.asset(
-                    Assets.iconsSearch,
-                    height: 20,
-                    width: 20,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: greyColor3,
+                      width: 0.7,
+                    ),
+                    borderRadius: BorderRadius.circular(22),
+                  ),
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Image.asset(
+                      Assets.iconsSearch,
+                      height: 20,
+                      width: 20,
+                    ),
                   ),
                 ),
+                cursorColor: oliveColor,
               ),
-              cursorColor: oliveColor,
-            ),
-            suggestionsCallback: (pattern) {
-              return ctr.locationDetails.where((LocationDetail option) {
-                return option.name!
-                    .toLowerCase()
-                    .contains(pattern.toLowerCase());
-              });
-            },
-            itemBuilder: (_, LocationDetail? suggestion) {
-              return ListTile(
-                contentPadding: const EdgeInsets.only(left: 12),
-                title: Text(
-                  suggestion?.name ?? '',
-                  style: const TextStyle(
-                    color: Colors.black,
+              suggestionsCallback: (pattern) {
+                return ctr.locationDetails.where((LocationDetail option) {
+                  return option.name!
+                      .toLowerCase()
+                      .contains(pattern.toLowerCase());
+                });
+              },
+              itemBuilder: (_, LocationDetail? suggestion) {
+                return ListTile(
+                  contentPadding: const EdgeInsets.only(left: 12),
+                  title: Text(
+                    suggestion?.name ?? '',
+                    style: const TextStyle(
+                      color: Colors.black,
+                    ),
                   ),
-                ),
-              );
-            },
-            onSuggestionSelected: (LocationDetail? suggestion) {
-              int index = ctr.getLocationIndex(
-                suggestion?.locationId ?? '',
-              );
+                );
+              },
+              onSuggestionSelected: (LocationDetail? suggestion) {
+                int index = ctr.getLocationIndex(
+                  suggestion?.locationId ?? '',
+                );
 
-              Get.to(
-                () => PlaceDetailScreen(
-                  location: suggestion,
-                  index: index,
-                ),
-                transition: Transition.downToUp,
-              );
-            },
-            suggestionsBoxDecoration: const SuggestionsBoxDecoration(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
+                Get.to(
+                      () => PlaceDetailScreen(
+                    location: suggestion,
+                    index: index,
+                  ),
+                  transition: Transition.downToUp,
+                );
+              },
+              suggestionsBoxDecoration: const SuggestionsBoxDecoration(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
                 ),
               ),
             ),

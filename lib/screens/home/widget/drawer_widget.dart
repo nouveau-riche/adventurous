@@ -12,6 +12,7 @@ import 'package:adventurous_learner_app/screens/home/widget/drawer_tile_widget.d
 import 'package:adventurous_learner_app/data/controllers/auth/logout_controller.dart';
 import 'package:adventurous_learner_app/data/controllers/bottom_nav/bottom_nav_controller.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({Key? key}) : super(key: key);
@@ -107,6 +108,18 @@ class DrawerWidget extends StatelessWidget {
             text: 'Share The App',
             onPressed: () {
               Share.share('check out adventurous app on playstore');
+            },
+          ),
+          DrawerTileWidget(
+            image: Assets.iconsBlock,
+            text: 'Blog',
+            onPressed: () async{
+              const url = 'https://theadventurouslearner.com/#/blogs';
+              if (await canLaunch(url)) {
+                await launch(url);
+              } else {
+                throw 'Could not launch $url';
+              }
             },
           ),
           DrawerTileWidget(

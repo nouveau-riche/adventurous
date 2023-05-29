@@ -5,7 +5,11 @@ class ApiConstants {
     "Content-Type": "application/x-www-form-urlencoded",
   };
 
-  final baseUrl = "http://68.178.202.229:3000/api/v1/";
+  //Old Base URL
+  //final baseUrl = "http://68.178.202.229:3000/api/v1/";
+
+  //New Base URL
+  final baseUrl = "https://api.theadventurouslearner.com/api/v1/";
 
   // final baseUrl = "https://adventurelearner.herokuapp.com/api/v1/";
 

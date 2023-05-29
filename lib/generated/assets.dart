@@ -16,6 +16,7 @@ class Assets {
   static const String iconsLearning = 'assets/icons/learning.webp';
   static const String iconsLocationName = 'assets/icons/location_name.webp';
   static const String iconsLogout = 'assets/icons/logout.webp';
+  static const String iconsBlock = 'assets/icons/block.png';
   static const String iconsMap = 'assets/icons/map.webp';
   static const String iconsMapFilled = 'assets/icons/map_filled.webp';
   static const String iconsModule = 'assets/icons/module.webp';
@@ -37,5 +38,8 @@ class Assets {
   static const String logoAppIcon = 'assets/logo/app_icon.png';
   static const String logoAppIconIos = 'assets/logo/app_icon_ios.png';
   static const String logoSplash = 'assets/logo/splash.png';
+  static const String logoSplash2 = 'assets/logo/splash2.png';
+
+
 
 }

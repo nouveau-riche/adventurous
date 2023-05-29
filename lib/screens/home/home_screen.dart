@@ -38,10 +38,16 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   const SizedBox(height: 20),
                   Center(
-                    child: Image.asset(
-                      Assets.logoAppIcon,
-                      height: 122,
-                    ),
+                    child: Container(
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16)
+                      ),
+                      child: Image.asset(
+                        Assets.logoSplash2,
+                        height: 122,
+                      ),
+                    )
                   ),
                   const SizedBox(height: 30),
                   if (ctr.isLoading)

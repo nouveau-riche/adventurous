@@ -92,18 +92,18 @@ dev_dependencies:
 
 
 flutter_icons:
-  image_path_android: "assets/logo/app_icon.png"
-  image_path_ios: "assets/logo/app_icon_ios.png"
+  image_path_android: "assets/logo/ios_logo.png"
+  image_path_ios: "assets/logo/ios_logo.png"
   android: true
   ios: true
   adaptive_icon_background: "#ffffff"
 
 flutter_native_splash:
-  image: "assets/logo/splash.png"
+  image: "assets/logo/ios_logo.png"
   color: "#ffffff"
 
   android_12:
-    background_image: "assets/logo/splash.png"
+    background_image: "assets/logo/ios_logo.png"
     color: "#ffffff"
 
 

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f68a654-654a-4f49-871e-0cebcd5fd001" name="Changes" comment="ios splash screen 2&#10;&#10;* Initial commit">
+    <list default="true" id="6f68a654-654a-4f49-871e-0cebcd5fd001" name="Changes" comment="&#10;&#10;* Initial commit">
       <change afterPath="$PROJECT_DIR$/assets/icons/filter_icon.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/data/controllers/map/filter_controller.dart" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/data/modals/map/filter_model.dart" afterDir="false" />
@@ -35,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="testing-milestone" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -156,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685593648203</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="&#10;&#10;* Initial commit">
+      <created>1691479244013</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1691479244013</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +187,7 @@
     <MESSAGE value="UPDATES:&#10;&#10;* Milestone 3 completed" />
     <MESSAGE value="ios splash screen&#10;&#10;* Initial commit" />
     <MESSAGE value="ios splash screen 2&#10;&#10;* Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="ios splash screen 2&#10;&#10;* Initial commit" />
+    <MESSAGE value="&#10;&#10;* Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;&#10;* Initial commit" />
   </component>
 </project>

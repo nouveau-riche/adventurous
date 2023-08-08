@@ -56,7 +56,10 @@ class ConstString {
   final changeNameOrBio = "Change Name or Bio";
   final save = "Save";
   final enterNewEmail = "Please enter the new Email ID";
+  final filter = "Filter";
 
   final itStartShowingAfterVerify =
       'Thank you for adding the location\nonce it will be verified \nby admin, it’s start showing in\nyour visited location';
+
+
 }

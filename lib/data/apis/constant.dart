@@ -8,8 +8,11 @@ class ApiConstants {
   //Old Base URL
   //final baseUrl = "http://68.178.202.229:3000/api/v1/";
 
-  //New Base URL
+  //New Base URL  (PROD) -- > USE THIS FOR PRODUCTION
   final baseUrl = "https://api.theadventurouslearner.com/api/v1/";
+
+  //NEW BASE URL (DEV)
+  //final baseUrl = "http://82.180.160.159:3006/api/v1";
 
   // final baseUrl = "https://adventurelearner.herokuapp.com/api/v1/";
 
@@ -62,6 +65,11 @@ class ApiConstants {
   String get getLearningModuleUrl => '${baseUrl}module/get';
 
   String get getNotificationUrl => '${baseUrl}notification/get-notifications';
+
+  String get getFilterStateAndTagsUrl => '${baseUrl}location/get-tags-and-state';
+
+  String get searchFilterStateAndTagsUrl => '${baseUrl}location/search-website-tags';
+
 
   final tagHomeScreenContent = 'HOME';
 

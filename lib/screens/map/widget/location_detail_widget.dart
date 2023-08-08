@@ -53,11 +53,16 @@ class LocationDetailWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text(
-                  location?.name ?? '',
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w800,
+                SizedBox(
+                  width: MediaQuery.of(context).size.width*0.55,
+                  child: Text(
+                    //maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    location?.name ?? '',
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
                 ),
                 Row(

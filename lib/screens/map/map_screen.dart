@@ -47,7 +47,7 @@ class MapScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 40),
               );
             }),
-            const SearchLocationWidget(),
+            const SearchAndFilterLocationWidget(),
             const LocationDetailParentWidget(),
           ],
         ),

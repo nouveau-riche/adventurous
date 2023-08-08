@@ -25,6 +25,7 @@ class Assets {
   static const String iconsPassword = 'assets/icons/password.webp';
   static const String iconsPhone = 'assets/icons/phone.webp';
   static const String iconsPrivacy = 'assets/icons/privacy.webp';
+  static const String filterScreen = 'assets/icons/filter_icon.png';
   static const String iconsProfile = 'assets/icons/profile.webp';
   static const String iconsProfileFilled = 'assets/icons/profile_filled.webp';
   static const String iconsReview = 'assets/icons/review.webp';
@@ -39,6 +40,7 @@ class Assets {
   static const String logoAppIconIos = 'assets/logo/app_icon_ios.png';
   static const String logoSplash = 'assets/logo/splash.png';
   static const String logoSplash2 = 'assets/logo/splash2.png';
+
 
 
 

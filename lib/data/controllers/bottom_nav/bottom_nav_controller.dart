@@ -9,7 +9,7 @@ import 'package:adventurous_learner_app/screens/profile/profile_screen.dart';
 class BottomNavController extends GetxController {
   int currentPageIndex = 0;
 
-  List<Widget> navigationScreens = const [
+  List<Widget> navigationScreens =  [
     HomeScreen(),
     MapScreen(),
     AddPlaceScreen(),

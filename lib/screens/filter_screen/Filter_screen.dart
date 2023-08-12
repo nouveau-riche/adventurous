@@ -15,7 +15,8 @@ import '../../utils/widgets/back_button_widget.dart';
 import '../../utils/widgets/rounded_elevated_bt_widget.dart';
 
 class FilterScreen extends StatelessWidget {
-  FilterScreen({Key? key}) : super(key: key);
+  FilterScreen({Key? key,required this.isFilter}) : super(key: key);
+  RxBool isFilter;
   final FilterController controller = Get.put(FilterController());
   TextEditingController gender = TextEditingController();
   String selectedOpportunity = '';
@@ -53,6 +54,7 @@ class FilterScreen extends StatelessWidget {
                       const SizedBox(
                         height: 25,
                       ),
+
                       const Text(
                         "Find your location by learning opportunity & states",
                         style: TextStyle(
@@ -179,8 +181,9 @@ class FilterScreen extends StatelessWidget {
             print("TAGE+++++++++$selectedOpportunity");
             print("STATE+++++++++$selectedState");
             print("FilterType+++++++++$filterType");
-
-            controller.searchFilterByTagAndState(filterType: filterType,state: selectedState,tag: selectedOpportunity);
+isFilter = true.obs;
+log("IS FILTER ++ ${isFilter.value}");
+            controller.searchFilterByTagAndState(filterType: filterType,state: selectedState,tag: selectedOpportunity,isFilter: isFilter);
             filterType = "";
           },
           radius: 10,

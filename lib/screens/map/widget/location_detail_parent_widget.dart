@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:adventurous_learner_app/data/controllers/map/filter_controller.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
@@ -6,12 +9,14 @@ import 'package:adventurous_learner_app/data/controllers/map/location_detail_con
 import 'package:adventurous_learner_app/utils/widgets/shimmer/location_detail_shimmer_widget.dart';
 
 class LocationDetailParentWidget extends StatelessWidget {
-  const LocationDetailParentWidget({Key? key}) : super(key: key);
+  LocationDetailParentWidget({Key? key, required this.isFilter})
+      : super(key: key);
+  RxBool isFilter;
 
   @override
   Widget build(BuildContext context) {
     final ctr = Get.put(LocationDetailController());
-
+    final FilterController controller = Get.put(FilterController());
     return GetBuilder<LocationDetailController>(
       builder: (_) {
         if (ctr.isLoading && ctr.locationDetails.isEmpty) {
@@ -31,10 +36,19 @@ class LocationDetailParentWidget extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.fromLTRB(20, 20, 20, 30),
               itemBuilder: (_, index) => LocationDetailWidget(
-                location: ctr.locationDetails[index],
+                location:
+                isFilter.value
+                    ? controller.locationDetailResponse?.data != null
+                        ? controller.locationDetailResponse?.data![index]
+                        : ctr.locationDetails[index]
+                    : ctr.locationDetails[index],
                 index: index,
               ),
-              itemCount: ctr.locationDetails.length,
+              itemCount: isFilter.value
+                  ? controller.locationDetailResponse?.data != null
+                      ? controller.locationDetailResponse?.data?.length
+                      : ctr.locationDetails.length
+                  : ctr.locationDetails.length,
             ),
           ),
         );

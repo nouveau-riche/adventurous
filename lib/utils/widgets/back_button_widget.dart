@@ -12,7 +12,7 @@ class BackButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () => Get.back(),
+      onPressed: () => Get.back(canPop:true ),
       splashColor: Colors.transparent,
       icon: Icon(Icons.arrow_back_ios, size: 22, color: color),
     );

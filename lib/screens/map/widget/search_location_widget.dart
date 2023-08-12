@@ -11,10 +11,10 @@ import 'package:adventurous_learner_app/data/controllers/map/location_detail_con
 import '../../filter_screen/Filter_screen.dart';
 
 class SearchAndFilterLocationWidget extends StatelessWidget {
-  const SearchAndFilterLocationWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
+   SearchAndFilterLocationWidget({Key? key,required this.isFilter}) : super(key: key);
+    RxBool isFilter;
+   @override
+   Widget build(BuildContext context) {
     final ctr = Get.put(LocationDetailController());
 
     return Positioned(
@@ -113,7 +113,7 @@ class SearchAndFilterLocationWidget extends StatelessWidget {
                 Expanded(
                     child: GestureDetector(
                   onTap: () {
-                    Get.to(() => FilterScreen());
+                    Get.to(() => FilterScreen(isFilter: isFilter));
                   },
                   child: Container(
                       height: 38,

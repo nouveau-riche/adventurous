@@ -15,10 +15,10 @@ class FilterController extends GetxController {
   LocationDetailResponse? locationDetailResponse;
   final constant = ApiConstants();
   LocationDetailController ctr = Get.put(LocationDetailController());
-
   // List<String> dropdownItems = <FilterModel>[].obs as List<String>;
   // var dropdownvalue = "".obs;
   // var isLoading = false.obs;
+  List<LocationDetail> locationDetails = [];
 
   @override
   onInit() {
@@ -50,7 +50,7 @@ class FilterController extends GetxController {
 
         // opportunity = response.body[''];
         print("CALL+++++++");
-        print("DATA++++++=======$data");
+        print("DATA++++++======dssdvd=$data");
         //dropdownItems = FilterModel.fromJson(data) as List<String> ;
       }
     } catch (e, s) {
@@ -61,7 +61,7 @@ class FilterController extends GetxController {
 
   //TO CALL FILTER
   Future<void> searchFilterByTagAndState(
-      {required tag, required state, required filterType}) async {
+      {required tag, required state, required filterType,required RxBool isFilter}) async {
     try {
       log(constant.searchFilterStateAndTagsUrl);
       final response = await http.post(
@@ -83,9 +83,11 @@ class FilterController extends GetxController {
       print("FilterType+++++++++1$filterType");
 
       if (response.statusCode == 200) {
+        isFilter = true.obs;
         print("Done");
         Map<String, dynamic> data = json.decode(response.body);
         locationDetailResponse = LocationDetailResponse.fromJson(data);
+
         print("DATA++++++=======$data");
       } else {
         print("Failed");

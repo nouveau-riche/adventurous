@@ -5,19 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f68a654-654a-4f49-871e-0cebcd5fd001" name="Changes" comment="&#10;&#10;* Initial commit">
-      <change afterPath="$PROJECT_DIR$/assets/icons/filter_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/data/controllers/map/filter_controller.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/data/modals/map/filter_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/data/modals/map/widget/const_dailogue.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/filter_screen/Filter_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/apis/constant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/apis/constant.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generated/assets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/assets.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/controllers/bottom_nav/bottom_nav_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/controllers/bottom_nav/bottom_nav_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/controllers/map/filter_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/controllers/map/filter_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/filter_screen/Filter_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/filter_screen/Filter_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/map/map_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/map/map_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/map/widget/location_detail_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/map/widget/location_detail_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/map/widget/location_detail_parent_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/map/widget/location_detail_parent_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/map/widget/search_location_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/map/widget/search_location_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/const_string.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/const_string.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/widgets/back_button_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/widgets/back_button_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691479244013</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="&#10;&#10;* Initial commit">
+      <created>1691479312442</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1691479312443</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

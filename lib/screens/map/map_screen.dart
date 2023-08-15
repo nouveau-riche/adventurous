@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -15,11 +13,11 @@ import 'package:adventurous_learner_app/screens/map/widget/location_detail_paren
 class MapScreen extends StatelessWidget {
   MapScreen({Key? key}) : super(key: key);
 
-  RxBool isFilter = true.obs;
+
   @override
   Widget build(BuildContext context) {
     final ctr = Get.put(MapController());
-    log("FILTER ::::::$isFilter");
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: oliveColor,
@@ -50,8 +48,8 @@ class MapScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 40),
               );
             }),
-            SearchAndFilterLocationWidget(isFilter: isFilter),
-            LocationDetailParentWidget(isFilter: isFilter),
+            const SearchAndFilterLocationWidget(),
+            const LocationDetailParentWidget(),
           ],
         ),
       ),

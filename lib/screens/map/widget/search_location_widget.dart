@@ -8,11 +8,11 @@ import 'package:adventurous_learner_app/screens/place_detail/place_detail_screen
 import 'package:adventurous_learner_app/data/modals/map/location_detail_response.dart';
 import 'package:adventurous_learner_app/data/controllers/map/location_detail_controller.dart';
 
-import '../../filter_screen/Filter_screen.dart';
+import '../../filter_screen/filter_screen.dart';
 
 class SearchAndFilterLocationWidget extends StatelessWidget {
-   SearchAndFilterLocationWidget({Key? key,required this.isFilter}) : super(key: key);
-    RxBool isFilter;
+   const SearchAndFilterLocationWidget({Key? key}) : super(key: key);
+
    @override
    Widget build(BuildContext context) {
     final ctr = Get.put(LocationDetailController());
@@ -113,7 +113,7 @@ class SearchAndFilterLocationWidget extends StatelessWidget {
                 Expanded(
                     child: GestureDetector(
                   onTap: () {
-                    Get.to(() => FilterScreen(isFilter: isFilter));
+                    Get.to(() => FilterScreen());
                   },
                   child: Container(
                       height: 38,

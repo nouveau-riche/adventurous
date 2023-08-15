@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:convert';
 
+import 'package:adventurous_learner_app/data/modals/map/filter_model.dart';
 import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
 
@@ -228,6 +229,88 @@ class Apis {
         final data = await response.stream.bytesToString();
         printLog(data);
         return LocationDetailResponse.fromJson(jsonDecode(data));
+      } else {
+        printLog(response.reasonPhrase);
+        final data = await response.stream.bytesToString();
+        showSnackBar(
+          BaseResponse.fromJson(jsonDecode(data)).message ?? '',
+          isError: true,
+        );
+        return null;
+      }
+    } catch (e) {
+      printLog(e);
+      return null;
+    }
+  }
+
+  Future<LocationDetailResponse?> getFilterLocationDetails(
+    String tag,
+    String state,
+    String filterType,
+    String token,
+    int skip,
+    int limit,
+  ) async {
+    final request =
+        utils.createPostRequest(constant.searchFilterStateAndTagsUrl);
+
+    request.headers.clear();
+
+    request.headers.addAll({
+      'Content-Type': 'application/json',
+      'x-access-token': token,
+    });
+
+    Map<String, dynamic> body = {
+      constant.paramSkip: skip,
+      constant.paramLimit: limit,
+      "filter": true,
+      "filterType": filterType,
+      "tag": tag,
+      "state": state
+    };
+
+    utils.addBodyToRequest(request, body);
+    http.StreamedResponse response = await request.send();
+
+    try {
+      if (response.statusCode == 200) {
+        final data = await response.stream.bytesToString();
+        printLog(data);
+        return LocationDetailResponse.fromJson(jsonDecode(data));
+      } else {
+        printLog(response.reasonPhrase);
+        final data = await response.stream.bytesToString();
+        showSnackBar(
+          BaseResponse.fromJson(jsonDecode(data)).message ?? '',
+          isError: true,
+        );
+        return null;
+      }
+    } catch (e) {
+      printLog(e);
+      return null;
+    }
+  }
+
+  Future<FilterModel?> getFilterTagsAndState(String token) async {
+    final request = utils.createPostRequest(constant.getFilterStateAndTagsUrl);
+
+    request.headers.clear();
+
+    request.headers.addAll({
+      'Content-Type': 'application/json',
+      'x-access-token': token,
+    });
+
+    http.StreamedResponse response = await request.send();
+
+    try {
+      if (response.statusCode == 200) {
+        final data = await response.stream.bytesToString();
+        printLog(data);
+        return FilterModel.fromJson(jsonDecode(data));
       } else {
         printLog(response.reasonPhrase);
         final data = await response.stream.bytesToString();

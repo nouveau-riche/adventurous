@@ -8,6 +8,8 @@ import 'package:adventurous_learner_app/screens/place_detail/place_detail_screen
 import 'package:adventurous_learner_app/data/controllers/map/map_controller.dart';
 import 'package:adventurous_learner_app/data/modals/map/location_detail_response.dart';
 
+import '../../../screens/map/widget/no_location_dialog_widget.dart';
+
 class LocationDetailController extends GetxController {
   bool isLoading = false;
   bool _noMoreResult = false;
@@ -16,6 +18,11 @@ class LocationDetailController extends GetxController {
   double latitude = 0.0;
   double longitude = 0.0;
   int _currentPage = 0;
+  bool enableFilter = false;
+
+  String tagCopy = '';
+  String stateCopy = '';
+  String filterTypeCopy = '';
 
   List<LocationDetail> locationDetails = [];
 
@@ -94,6 +101,70 @@ class LocationDetailController extends GetxController {
     }
   }
 
+  searchByFilter({
+    required tag,
+    required state,
+    required filterType,
+  }) {
+    locationDetails.clear();
+    _currentPage = 0;
+    enableFilter = true;
+
+    tagCopy = tag;
+    stateCopy = state;
+    filterTypeCopy = filterType;
+
+    searchFilterByTagAndState(
+      tag: tag,
+      state: state,
+      filterType: filterType,
+    );
+  }
+
+  searchFilterByTagAndState({
+    required tag,
+    required state,
+    required filterType,
+  }) async {
+    _startLoading();
+
+    final response = await constCtr.apis.getFilterLocationDetails(
+      tag,
+      state,
+      filterType,
+      constCtr.token,
+      _currentPage * 10,
+      10,
+    );
+
+    _stopLoading();
+
+    if (response != null && response.status!) {
+      if ((response.data ?? []).isEmpty) {
+        noLocationDialog();
+      } else {
+        locationDetails.addAll(response.data ?? []);
+        update();
+
+        if ((response.total ?? 0) < (_currentPage + 1) * 10) {
+          _noMoreResult = true;
+        }
+
+        Get.put(MapController()).addMarkerForAllLocation(locationDetails);
+
+        Get.back();
+      }
+    }
+  }
+
+  clearFilter() {
+    enableFilter = false;
+    locationDetails.clear();
+    fetchLocationDetails(latitude, longitude);
+
+    Get.back();
+  }
+
   _updatePage() {
     _currentPage++;
   }
@@ -102,7 +173,15 @@ class LocationDetailController extends GetxController {
     if (isLoading || _noMoreResult) return;
 
     _updatePage();
-    fetchLocationDetails(latitude, longitude);
+    if (enableFilter) {
+      searchFilterByTagAndState(
+        tag: tagCopy,
+        filterType: filterTypeCopy,
+        state: stateCopy,
+      );
+    } else {
+      fetchLocationDetails(latitude, longitude);
+    }
   }
 
   listEndReached() {
@@ -129,7 +208,6 @@ class LocationDetailController extends GetxController {
 
     return 0;
   }
-
 
   _startLoading() {
     isLoading = true;

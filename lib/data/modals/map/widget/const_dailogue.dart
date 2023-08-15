@@ -63,7 +63,7 @@ Future<dynamic> customDialog(
     builder: (context) {
       return NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (overscroll) {
-          overscroll.disallowGlow();
+          overscroll.disallowIndicator();
           return false;
         },
         child: StatefulBuilder(

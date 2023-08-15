@@ -4,6 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'package:adventurous_learner_app/utils/image_utils.dart';
 import 'package:adventurous_learner_app/utils/const_color.dart';
+import 'package:adventurous_learner_app/data/controllers/map/filter_controller.dart';
 import 'package:adventurous_learner_app/screens/place_detail/place_detail_screen.dart';
 import 'package:adventurous_learner_app/data/modals/map/location_detail_response.dart';
 
@@ -19,6 +20,8 @@ class LocationDetailWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(FilterController());
+
     return GestureDetector(
       onTap: () {
         Get.to(
@@ -54,7 +57,7 @@ class LocationDetailWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width*0.55,
+                  width: MediaQuery.of(context).size.width * 0.55,
                   child: Text(
                     //maxLines: 1,
                     overflow: TextOverflow.ellipsis,

@@ -11,7 +11,7 @@ import 'package:adventurous_learner_app/screens/profile/widget/place_detail_vert
 import 'package:adventurous_learner_app/data/controllers/profile/user_visited_location_controller.dart';
 
 class AllUserLocationScreen extends StatelessWidget {
-  const AllUserLocationScreen({Key? key}) : super(key: key);
+  const AllUserLocationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

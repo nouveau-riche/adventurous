@@ -39,7 +39,6 @@ class RegisterScreen extends StatelessWidget {
                         Assets.imagesLogin,
                         width: Get.width,
                         height: Get.height * 0.41,
-                        fit: BoxFit.fill,
                       ),
                     ),
                     const Positioned(
@@ -68,9 +67,9 @@ class RegisterScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 Form(
                   key: ctr.formKey,
-                  child: Column(
+                  child: const Column(
                     mainAxisSize: MainAxisSize.min,
-                    children: const [
+                    children: [
                       RegisterNameFieldWidget(),
                       SizedBox(height: 12),
                       RegisterEmailFieldWidget(),

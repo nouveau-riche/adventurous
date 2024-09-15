@@ -1,6 +1,3 @@
-import 'dart:developer';
-
-import 'package:adventurous_learner_app/data/controllers/map/filter_controller.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 

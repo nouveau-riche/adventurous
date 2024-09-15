@@ -36,7 +36,6 @@ class LoginScreen extends StatelessWidget {
                     Assets.imagesLogin,
                     width: Get.width,
                     height: Get.height * 0.41,
-                    fit: BoxFit.fill,
                   ),
                 ),
                 SizedBox(height: Get.height * 0.01),
@@ -56,9 +55,9 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 Form(
                   key: ctr.formKey,
-                  child: Column(
+                  child: const Column(
                     mainAxisSize: MainAxisSize.min,
-                    children: const [
+                    children: [
                       LoginEmailFieldWidget(),
                       SizedBox(height: 12),
                       LoginPasswordFieldWidget(),

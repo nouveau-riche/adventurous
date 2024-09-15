@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 import 'package:adventurous_learner_app/utils/common.dart';
-import 'package:adventurous_learner_app/utils/image_utils.dart';
 import 'package:adventurous_learner_app/utils/const_color.dart';
 import 'package:adventurous_learner_app/utils/widgets/back_button_widget.dart';
 import 'package:adventurous_learner_app/utils/widgets/rounded_elevated_bt_widget.dart';
@@ -10,7 +9,7 @@ import 'package:adventurous_learner_app/utils/widgets/shimmer/contact_us_shimmer
 import 'package:adventurous_learner_app/data/controllers/contact_us/contact_us_controller.dart';
 
 class ContactUsScreen extends StatelessWidget {
-  const ContactUsScreen({Key? key}) : super(key: key);
+  const ContactUsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,23 +35,17 @@ class ContactUsScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       const SizedBox(height: 16),
-                      getImageBuilder(
-                        ctr.details?.imageURL ?? '',
-                        BorderRadius.zero,
+                      Image.network(
+                        "https://cdni.iconscout.com/illustration/premium/thumb/contact-us-illustration-download-in-svg-png-gif-file-formats--call-logo-customer-service-support-onboarding-pack-business-illustrations-4849052.png?f=webp",
                         height: 300,
                         width: Get.width,
                         fit: BoxFit.fill,
-                        placeHolder: placeHolderImage(
-                          300,
-                          Get.width,
-                          BorderRadius.zero,
-                        ),
                       ),
                       const SizedBox(height: 18),
-                      Text(
-                        ctr.details?.description ?? '',
+                      const Text(
+                        'nikunjsha02@gmail.com',
                         textAlign: TextAlign.center,
-                        style: const TextStyle(color: Colors.black),
+                        style: TextStyle(color: Colors.black),
                       ),
                       const SizedBox(height: 40),
                       RoundedElevatedButtonWidget(

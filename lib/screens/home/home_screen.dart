@@ -11,7 +11,7 @@ import 'package:adventurous_learner_app/data/controllers/home/home_controller.da
 import 'package:adventurous_learner_app/utils/widgets/shimmer/home_screen_shimmmer_widget.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,17 +38,15 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   const SizedBox(height: 20),
                   Center(
-                    child: Container(
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16)
-                      ),
-                      child: Image.asset(
-                        Assets.logoSplash2,
-                        height: 122,
-                      ),
-                    )
-                  ),
+                      child: Container(
+                    clipBehavior: Clip.antiAlias,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
+                    child: Image.asset(
+                      Assets.logoSplash2,
+                      height: 122,
+                    ),
+                  )),
                   const SizedBox(height: 30),
                   if (ctr.isLoading)
                     const HomeScreenShimmerWidget()
@@ -84,8 +82,8 @@ class HomeScreen extends StatelessWidget {
                         data: ctr.homeScreenContent?.description ?? '',
                         style: {
                           "body": Style(
-                            margin: EdgeInsets.zero,
-                            padding: EdgeInsets.zero,
+                            margin: Margins.zero,
+                            padding: HtmlPaddings.zero,
                           ),
                           "html": Style(textAlign: TextAlign.justify),
                         },

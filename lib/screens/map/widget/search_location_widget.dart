@@ -11,7 +11,7 @@ import 'package:adventurous_learner_app/data/controllers/map/location_detail_con
 import '../../filter_screen/filter_screen.dart';
 
 class SearchAndFilterLocationWidget extends StatelessWidget {
-   const SearchAndFilterLocationWidget({Key? key}) : super(key: key);
+   const SearchAndFilterLocationWidget({super.key});
 
    @override
    Widget build(BuildContext context) {

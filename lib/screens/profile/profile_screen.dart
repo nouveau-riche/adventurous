@@ -26,11 +26,11 @@ class ProfileScreen extends StatelessWidget {
         actions: const [NotificationBtWidget()],
       ),
       drawer: const Drawer(child: DrawerWidget()),
-      body: SafeArea(
+      body: const SafeArea(
         child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
+          physics: BouncingScrollPhysics(),
           child: Column(
-            children: const [
+            children: [
               EditProfileBtWidget(),
               PersonalDetailWidget(),
               AddNewVisitedLocationWidget(),

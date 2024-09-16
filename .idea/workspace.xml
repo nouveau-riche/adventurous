@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f68a654-654a-4f49-871e-0cebcd5fd001" name="Changes" comment="&#10;&#10;* Initial commit">
-      <change afterPath="$PROJECT_DIR$/Dart.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/adventurous_learner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/adventurous_learner.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated/assets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/assets.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/contact_us/contact_us_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/contact_us/contact_us_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

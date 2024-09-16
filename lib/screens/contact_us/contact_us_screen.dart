@@ -36,14 +36,14 @@ class ContactUsScreen extends StatelessWidget {
                     children: [
                       const SizedBox(height: 16),
                       Image.network(
-                        "https://cdni.iconscout.com/illustration/premium/thumb/contact-us-illustration-download-in-svg-png-gif-file-formats--call-logo-customer-service-support-onboarding-pack-business-illustrations-4849052.png?f=webp",
+                        ctr.details?.imageURL ?? "",
                         height: 300,
                         width: Get.width,
                         fit: BoxFit.fill,
                       ),
                       const SizedBox(height: 18),
-                      const Text(
-                        'nikunjsha02@gmail.com',
+                       Text(
+                        ctr.details?.email ?? '',
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.black),
                       ),

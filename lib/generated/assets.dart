@@ -31,7 +31,7 @@ class Assets {
   static const String iconsReview = 'assets/icons/review.webp';
   static const String iconsSearch = 'assets/icons/search.webp';
   static const String iconsShare = 'assets/icons/share.webp';
-  static const String imagesLogin = 'assets/images/login.png';
+  static const String imagesLogin = 'assets/images/login.webp';
   static const String imagesLogo = 'assets/images/logo.webp';
   static const String imagesPassword = 'assets/images/password.webp';
   static const String imagesPlaceholder = 'assets/images/placeholder.webp';

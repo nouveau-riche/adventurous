@@ -41,7 +41,4 @@ class Assets {
   static const String logoSplash = 'assets/logo/splash.png';
   static const String logoSplash2 = 'assets/logo/splash2.png';
 
-
-
-
 }

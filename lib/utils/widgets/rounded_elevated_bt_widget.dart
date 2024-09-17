@@ -32,15 +32,14 @@ class RoundedElevatedButtonWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(radius),
       ),
       child: ElevatedButton(
-        style: ButtonStyle(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(radius),
-            ),
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(radius),
           ),
-          backgroundColor: MaterialStateProperty.all(Colors.transparent),
-          elevation: MaterialStateProperty.all(elevation),
-          shadowColor: MaterialStateProperty.all(Colors.transparent),
+          backgroundColor: Colors.transparent,
+          elevation: elevation,
+          shadowColor: Colors.transparent,
         ),
         onPressed: () => onPressed(),
         child: text,

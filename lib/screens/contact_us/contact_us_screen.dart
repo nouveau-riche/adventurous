@@ -8,6 +8,8 @@ import 'package:adventurous_learner_app/utils/widgets/rounded_elevated_bt_widget
 import 'package:adventurous_learner_app/utils/widgets/shimmer/contact_us_shimmer_widget.dart';
 import 'package:adventurous_learner_app/data/controllers/contact_us/contact_us_controller.dart';
 
+import '../../utils/image_utils.dart';
+
 class ContactUsScreen extends StatelessWidget {
   const ContactUsScreen({super.key});
 
@@ -35,17 +37,23 @@ class ContactUsScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       const SizedBox(height: 16),
-                      Image.network(
-                        ctr.details?.imageURL ?? "",
+                      getImageBuilder(
+                        ctr.details?.imageURL,
+                        BorderRadius.circular(10),
                         height: 300,
                         width: Get.width,
                         fit: BoxFit.fill,
+                        placeHolder: placeHolderImage(
+                          300,
+                          Get.width,
+                          BorderRadius.circular(10),
+                        ),
                       ),
                       const SizedBox(height: 18),
-                       Text(
+                      Text(
                         ctr.details?.email ?? '',
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.black),
+                        style: const TextStyle(color: Colors.black),
                       ),
                       const SizedBox(height: 40),
                       RoundedElevatedButtonWidget(

@@ -80,7 +80,7 @@ class MapController extends GetxController {
     mapMarker.clear();
 
     mapMarker.add(Marker(
-      icon: BitmapDescriptor.defaultMarkerWithHue(80),
+      icon: BitmapDescriptor.defaultMarkerWithHue(60),
       markerId: MarkerId(DateTime.now().toString()),
       position: LatLng(
         currentLatitude,

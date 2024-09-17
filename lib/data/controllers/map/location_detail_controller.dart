@@ -39,7 +39,7 @@ class LocationDetailController extends GetxController {
     }
 
     _startLoading();
-
+    
     final response = await constCtr.apis.getLocationDetails(
       lat,
       long,

@@ -4,7 +4,7 @@ const kSecondaryTextColor = Color.fromRGBO(42, 42, 42, 0.6);
 const kHintTextColor = Color.fromRGBO(42, 42, 42, 0.8);
 const kTextFieldIconColor = Color.fromRGBO(122, 134, 154, 0.8);
 
-const oliveColor = Color.fromRGBO(80, 200, 120, 1);
+const oliveColor = Color.fromRGBO(136, 137, 121, 1);
 
 const yellowColor = Color.fromRGBO(239, 230, 0, 1);
 

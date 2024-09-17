@@ -39,6 +39,7 @@ class RegisterScreen extends StatelessWidget {
                         Assets.imagesLogin,
                         width: Get.width,
                         height: Get.height * 0.41,
+                        fit: BoxFit.fill,
                       ),
                     ),
                     const Positioned(

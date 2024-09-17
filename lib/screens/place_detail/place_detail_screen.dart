@@ -99,7 +99,10 @@ class PlaceDetailScreen extends StatelessWidget {
                     radius: 32,
                     elevation: 0,
                     color: oliveColor,
-                    text: Text(constCtr.strings.direction),
+                    text: Text(
+                      constCtr.strings.direction,
+                      style: const TextStyle(color: Colors.white),
+                    ),
                     onPressed: () {
                       openURL(
                         'https://www.google.com/maps/search/?api=1&query=${location?.location?.coordinates?[1] ?? ''},${location?.location?.coordinates?[0] ?? ''}',
@@ -112,7 +115,10 @@ class PlaceDetailScreen extends StatelessWidget {
                     radius: 32,
                     elevation: 0,
                     color: oliveColor,
-                    text: Text(constCtr.strings.contact),
+                    text: Text(
+                      constCtr.strings.contact,
+                      style: const TextStyle(color: Colors.white),
+                    ),
                     onPressed: () {
                       openURL(
                         'tel:${location?.countryCode ?? '+91'}${location?.contactNo ?? ''}',
@@ -125,7 +131,10 @@ class PlaceDetailScreen extends StatelessWidget {
                     radius: 32,
                     elevation: 0,
                     color: oliveColor,
-                    text: Text(constCtr.strings.website),
+                    text: Text(
+                      constCtr.strings.website,
+                      style: const TextStyle(color: Colors.white),
+                    ),
                     onPressed: () {
                       openURL(location?.websiteLink ?? '');
                     },
